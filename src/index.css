@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import benefits animation styles */
+@import url('./styles/benefits-animation.css');

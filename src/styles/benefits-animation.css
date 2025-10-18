@@ -1,0 +1,140 @@
+/* 
+ * Enhanced Benefits Section Animation Styles
+ * Provides smooth, attention-grabbing animations with reduced motion support
+ */
+
+/* Keyframe animations for popup effects */
+@keyframes benefitsPopIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+  60% {
+    opacity: 0.8;
+    transform: translateY(-8px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes benefitsSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes benefitsScaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Enhanced floating animation for dashboard elements */
+@keyframes benefitsFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Pulsing glow effect for active elements */
+@keyframes benefitsGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+  }
+}
+
+/* Apply animations to benefits section elements */
+.benefits-header-animated {
+  animation: benefitsPopIn 0.8s ease-out forwards;
+}
+
+.benefits-subtitle-animated {
+  animation: benefitsSlideUp 0.8s ease-out 0.2s forwards;
+  opacity: 0; /* Start hidden */
+}
+
+.benefits-item-animated {
+  animation: benefitsScaleIn 0.6s ease-out forwards;
+}
+
+.benefits-dashboard-animated {
+  animation: benefitsFloat 3s ease-in-out infinite;
+}
+
+.benefits-active-glow {
+  animation: benefitsGlow 2s ease-in-out infinite;
+}
+
+/* Reduced motion preferences support */
+@media (prefers-reduced-motion: reduce) {
+  .benefits-header-animated,
+  .benefits-subtitle-animated,
+  .benefits-item-animated {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .benefits-dashboard-animated {
+    animation: none;
+  }
+  
+  .benefits-active-glow {
+    animation: none;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  
+  /* Maintain smooth transitions but reduce motion */
+  * {
+    transition-duration: 0.2s !important;
+    animation-duration: 0.2s !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .benefits-active-glow {
+    box-shadow: 0 0 0 3px currentColor;
+  }
+}
+
+/* Focus management for accessibility */
+.benefits-section:focus-within .benefits-item-animated {
+  transform: scale(1.02);
+  transition: transform 0.2s ease-out;
+}
+
+/* Performance optimization - will-change for animated elements */
+.benefits-header-animated,
+.benefits-subtitle-animated,
+.benefits-item-animated,
+.benefits-dashboard-animated {
+  will-change: transform, opacity;
+}
+
+/* Remove will-change after animation completes to free up resources */
+.benefits-animation-complete {
+  will-change: auto;
+}
