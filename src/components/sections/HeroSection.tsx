@@ -141,7 +141,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               </div>
 
               <div className="relative flex items-center justify-center">
-                <div className="w-[480px] h-80 bg-gradient-to-br from-blue-50/30 to-blue-100/20 dark:bg-gradient-to-br dark:from-blue-950/30 dark:to-blue-900/20 rounded-xl backdrop-blur-sm border border-blue-200/20 dark:border-blue-800/20 flex items-center justify-center p-8" style={{ background: 'linear-gradient(135deg, rgba(135,206,235,0.4) 0%, rgba(65,105,225,0.6) 50%, rgba(30,58,138,0.5) 100%)' }}>
+                <div className="w-[480px] h-80 rounded-xl backdrop-blur-sm border border-blue-300/40 flex items-center justify-center p-8" style={{ background: 'linear-gradient(135deg, #5BA3D0 0%, #4FA3FF 50%, #6B9FD6 100%)' }}>
                   <CpuArchitecture 
                     className="w-full h-full"
                     text="AI"
