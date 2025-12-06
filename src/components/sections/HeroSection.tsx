@@ -73,7 +73,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
                 <div className="space-y-4">
-                  <h1 className={`text-7xl font-bold leading-tight text-left transition-all duration-1000 ${
+                  <h1 className={`text-6xl font-bold leading-tight text-left transition-all duration-1000 ${
                     isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
                   }`}>
                     <span className="bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent">
