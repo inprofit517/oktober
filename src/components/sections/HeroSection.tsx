@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '../ui/button';
 import { AnimatedCounter } from '../ui/AnimatedCounter';
 import { Navbar } from './Navbar';
@@ -18,8 +18,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   title = "Automatisieren Sie",
   typewriterWords = ["Ihr Unternehmen"],
   subtitle = "Transformieren Sie Ihr Unternehmen mit modernsten Automations-Lösungen. Speziell entwickelt für Schweizer Standards, um Prozesse zu beschleunigen, Effizienz zu steigern und nachhaltiges Wachstum zu sichern.",
-  primaryButtonText = "Get Started",
-  secondaryButtonText = "Try Demo",
+  primaryButtonText = "Jetzt Starten",
+  secondaryButtonText = "Demo ansehen",
   onShowContact
 }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -103,12 +103,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     {primaryButtonText}
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
-                  <Button 
-                    variant="outline" 
-                    size="lg" 
+                  <Button
+                    variant="outline"
+                    size="lg"
                     onClick={scrollToDemo}
                     className="bg-white border-2 border-gray-200 text-gray-900 hover:bg-gray-50 hover:border-gray-300 px-8 py-6 text-lg transform hover:scale-105 transition-all duration-300 font-semibold shadow-md hover:shadow-lg"
                   >
+                    <Play className="mr-2 h-5 w-5 fill-current" />
                     {secondaryButtonText}
                   </Button>
                 </div>
@@ -186,12 +187,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   {primaryButtonText}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg" 
+                <Button
+                  variant="outline"
+                  size="lg"
                   onClick={scrollToDemo}
                   className="bg-white border-2 border-gray-200 text-gray-900 hover:bg-gray-50 hover:border-gray-300 font-semibold"
                 >
+                  <Play className="mr-2 h-4 w-4 fill-current" />
                   {secondaryButtonText}
                 </Button>
               </div>
