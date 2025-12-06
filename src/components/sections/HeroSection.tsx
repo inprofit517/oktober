@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '../ui/button';
 import { AnimatedCounter } from '../ui/AnimatedCounter';
-import { Typewriter } from '../ui/Typewriter';
 import { Navbar } from './Navbar';
 import CpuArchitecture from '../ui/CpuArchitecture';
 
@@ -74,15 +73,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
                 <div className="space-y-4">
-                  <h1 className={`text-7xl font-bold text-foreground leading-tight text-left transition-all duration-1000 ${
+                  <h1 className={`text-7xl font-bold leading-tight text-left transition-all duration-1000 ${
                     isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
                   }`}>
-                    {title}
+                    <span className="bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent">
+                      {title}
+                    </span>
                     <br />
-                    <Typewriter 
-                      words={typewriterWords} 
-                      className="bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent min-h-[1.2em] inline-block"
-                    />
+                    <span className="text-foreground relative inline-block">
+                      {typewriterWords[0]}
+                      <span className="absolute -bottom-2 left-0 right-0 h-2 bg-blue-200 rounded-full" style={{width: '100%'}}></span>
+                    </span>
                   </h1>
                   <p className={`text-xl text-muted-foreground max-w-2xl leading-relaxed text-left transition-all duration-1000 delay-300 ${
                     isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
@@ -159,15 +160,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             {/* Mobile version */}
             <div className="lg:hidden space-y-8 pb-20">
               <div className="text-center space-y-4">
-                <h1 className="text-5xl font-bold text-foreground leading-tight">
-                  Make your
+                <h1 className="text-5xl font-bold leading-tight">
+                  <span className="bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent">
+                    {title}
+                  </span>
                   <br />
-                  Business
-                  <br />
-                  <Typewriter 
-                    words={typewriterWords} 
-                    className="bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent min-h-[1.2em] inline-block"
-                  />
+                  <span className="text-foreground relative inline-block">
+                    {typewriterWords[0]}
+                    <span className="absolute -bottom-1 left-0 right-0 h-1 bg-blue-200 rounded-full" style={{width: '100%'}}></span>
+                  </span>
                 </h1>
                 <p className="text-lg text-muted-foreground px-4 leading-relaxed" style={{ lineHeight: '1.4' }}>
                   Transform your business with
