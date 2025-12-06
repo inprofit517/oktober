@@ -16,9 +16,9 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
-  title = "Make your Business",
-  typewriterWords = ["automated", "effortless", "scalable"],
-  subtitle = "Transform your business with cutting-edge AI automation solutions. Streamline processes, boost efficiency, and scale without limits.",
+  title = "Automatisieren Sie",
+  typewriterWords = ["Ihr Unternehmen"],
+  subtitle = "Transformieren Sie Ihr Unternehmen mit modernsten Automations-Lösungen. Speziell entwickelt für Schweizer Standards, um Prozesse zu beschleunigen, Effizienz zu steigern und nachhaltiges Wachstum zu sichern.",
   primaryButtonText = "Get Started",
   secondaryButtonText = "Try Demo",
   onShowContact
