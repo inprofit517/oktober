@@ -70,9 +70,9 @@ interface Task {
 // Task Processing Dashboard Component
 const TaskDashboard: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
   const [tasks, setTasks] = useState<Task[]>([
-    { id: 1, name: "Email Campaign", status: "processing", progress: 0 },
-    { id: 2, name: "Lead Qualification", status: "completed", progress: 100 },
-    { id: 3, name: "Support Ticket", status: "processing", progress: 0 }
+    { id: 1, name: "E-Mail-Kampagne", status: "processing", progress: 0 },
+    { id: 2, name: "Lead-Qualifizierung", status: "completed", progress: 100 },
+    { id: 3, name: "Support-Ticket", status: "processing", progress: 0 }
   ])
   const [completedCount, setCompletedCount] = useState(247)
   const [todayCount, setTodayCount] = useState(23)
@@ -133,22 +133,22 @@ const TaskDashboard: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
       <div className="flex items-center justify-between mb-3 sm:mb-4 md:mb-6">
         <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
           <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 lg:w-3 lg:h-3 bg-green-500 rounded-full animate-pulse"></div>
-          <span className="text-gray-900 text-xs sm:text-sm md:text-lg lg:text-sm font-medium">Task Processor</span>
+          <span className="text-gray-900 text-xs sm:text-sm md:text-lg lg:text-sm font-medium">Aufgabenverarbeiter</span>
         </div>
-        <div className="text-xs md:text-sm lg:text-xs text-gray-400">Real-time</div>
+        <div className="text-xs md:text-sm lg:text-xs text-gray-400">Echtzeit</div>
       </div>
 
       {/* Metrics - Mobile first design */}
       <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6">
         <div className="bg-gray-50 rounded-lg p-2 sm:p-3 md:p-4 border border-gray-200">
-          <div className="text-xs md:text-sm lg:text-xs text-gray-600 mb-0.5 sm:mb-1 md:mb-2">Tasks Completed</div>
+          <div className="text-xs md:text-sm lg:text-xs text-gray-600 mb-0.5 sm:mb-1 md:mb-2">Aufgaben abgeschlossen</div>
           <div className="text-base sm:text-lg md:text-2xl lg:text-xl font-bold text-gray-900">
             {completedCount}
           </div>
-          <div className="text-xs md:text-sm lg:text-xs text-green-600 truncate">↗ +{todayCount} today</div>
+          <div className="text-xs md:text-sm lg:text-xs text-green-600 truncate">↗ +{todayCount} heute</div>
         </div>
         <div className="bg-gray-50 rounded-lg p-2 sm:p-3 md:p-4 border border-gray-200">
-          <div className="text-xs md:text-sm lg:text-xs text-gray-600 mb-0.5 sm:mb-1 md:mb-2">Success Rate</div>
+          <div className="text-xs md:text-sm lg:text-xs text-gray-600 mb-0.5 sm:mb-1 md:mb-2">Erfolgsquote</div>
           <div className="text-base sm:text-lg md:text-2xl lg:text-xl font-bold text-green-600">
             <AnimatedCounter end={successRate} suffix="%" />
           </div>
@@ -160,7 +160,7 @@ const TaskDashboard: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
 
       {/* Task List - Compact for mobile */}
       <div className="space-y-1.5 sm:space-y-2 flex-grow">
-        <div className="text-xs md:text-sm lg:text-xs text-gray-600 mb-1 sm:mb-2 md:mb-3">Active Tasks</div>
+        <div className="text-xs md:text-sm lg:text-xs text-gray-600 mb-1 sm:mb-2 md:mb-3">Aktive Aufgaben</div>
         {tasks.map((task, index) => (
           <div 
             key={task.id}
@@ -195,10 +195,10 @@ const TaskDashboard: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
       {/* Bottom Status - Hidden on mobile, visible on larger screens */}
       <div className="hidden sm:block mt-2 sm:mt-3 md:mt-4 pt-2 sm:pt-3 md:pt-4 border-t border-gray-200">
         <div className="flex items-center justify-between">
-          <div className="text-xs md:text-sm lg:text-xs text-gray-600">System Status</div>
+          <div className="text-xs md:text-sm lg:text-xs text-gray-600">Systemstatus</div>
           <div className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 lg:w-2 lg:h-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-xs md:text-sm lg:text-xs text-green-600">Operational</span>
+            <span className="text-xs md:text-sm lg:text-xs text-green-600">Betriebsbereit</span>
           </div>
         </div>
       </div>
@@ -223,35 +223,35 @@ const CostDashboard: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
       <div className="flex items-center justify-between mb-3 sm:mb-4 md:mb-6">
         <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
           <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 lg:w-3 lg:h-3 bg-red-500 rounded-full animate-pulse"></div>
-          <span className="text-gray-900 text-xs sm:text-sm md:text-lg lg:text-sm font-medium">Cost Reduction</span>
+          <span className="text-gray-900 text-xs sm:text-sm md:text-lg lg:text-sm font-medium">Kostenreduktion</span>
         </div>
-        <div className="text-xs md:text-sm lg:text-xs text-gray-400">6 Months</div>
+        <div className="text-xs md:text-sm lg:text-xs text-gray-400">6 Monate</div>
       </div>
 
       {/* Metrics Cards - Mobile first */}
       <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6">
         <div className="bg-gray-50 rounded-lg p-2 sm:p-3 md:p-4 border border-gray-200">
-          <div className="text-xs md:text-sm lg:text-xs text-gray-600 mb-0.5 sm:mb-1 md:mb-2">Cost Reduction</div>
+          <div className="text-xs md:text-sm lg:text-xs text-gray-600 mb-0.5 sm:mb-1 md:mb-2">Kostenreduktion</div>
           <div className="text-base sm:text-lg md:text-2xl lg:text-xl font-bold text-red-600">
             <AnimatedCounter end={45} suffix="%" />
           </div>
           <div className="text-xs md:text-sm lg:text-xs text-red-600 flex items-center gap-1 truncate">
             <ArrowDown className="w-3 h-3 md:w-4 md:h-4 lg:w-3 lg:h-3 flex-shrink-0" />
-            <span className="truncate">vs baseline</span>
+            <span className="truncate">vs. Ausgangsposition</span>
           </div>
         </div>
         <div className="bg-gray-50 rounded-lg p-2 sm:p-3 md:p-4 border border-gray-200">
-          <div className="text-xs md:text-sm lg:text-xs text-gray-600 mb-0.5 sm:mb-1 md:mb-2">Monthly Savings</div>
+          <div className="text-xs md:text-sm lg:text-xs text-gray-600 mb-0.5 sm:mb-1 md:mb-2">Monatliche Ersparnisse</div>
           <div className="text-base sm:text-lg md:text-2xl lg:text-xl font-bold text-green-600">
             <AnimatedCounter end={28} prefix="$" suffix="k" />
           </div>
-          <div className="text-xs md:text-sm lg:text-xs text-green-600 truncate">per month</div>
+          <div className="text-xs md:text-sm lg:text-xs text-green-600 truncate">pro Monat</div>
         </div>
       </div>
-      
+
       {/* Visual Cost Trend - Mobile optimized */}
       <div className="flex-grow flex flex-col">
-        <div className="text-xs md:text-sm lg:text-xs text-gray-600 mb-1 sm:mb-2 md:mb-3">Operating Costs Over Time</div>
+        <div className="text-xs md:text-sm lg:text-xs text-gray-600 mb-1 sm:mb-2 md:mb-3">Betriebskosten im Laufe der Zeit</div>
         <div className="relative bg-gray-50 rounded-lg border border-gray-200 p-2 sm:p-3 md:p-4 flex-grow min-h-[120px] sm:min-h-[140px] md:min-h-[180px] lg:min-h-[160px]">
           <svg className="w-full h-full" viewBox="0 0 280 80" preserveAspectRatio="xMidYMid meet">
             <defs>
@@ -315,10 +315,10 @@ const CostDashboard: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
       {/* Bottom Status - Compact */}
       <div className="mt-2 sm:mt-3 md:mt-4 pt-2 sm:pt-3 md:pt-4 border-t border-gray-200">
         <div className="flex items-center justify-between">
-          <div className="text-xs md:text-sm lg:text-xs text-gray-600">Tracking Period</div>
+          <div className="text-xs md:text-sm lg:text-xs text-gray-600">Verfolgungszeitraum</div>
           <div className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 lg:w-2 lg:h-2 bg-red-500 rounded-full animate-pulse"></div>
-            <span className="text-xs md:text-sm lg:text-xs text-red-600">Active</span>
+            <span className="text-xs md:text-sm lg:text-xs text-red-600">Aktiv</span>
           </div>
         </div>
       </div>
@@ -334,9 +334,9 @@ interface Competitor {
 // Competition Dashboard Component
 const CompetitionDashboard: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
   const competitors = [
-    { name: "Your Company", score: 95 },
-    { name: "Competitor A", score: 68 },
-    { name: "Competitor B", score: 62 }
+    { name: "Ihr Unternehmen", score: 95 },
+    { name: "Konkurrent A", score: 68 },
+    { name: "Konkurrent B", score: 62 }
   ]
 
   return (
@@ -345,35 +345,35 @@ const CompetitionDashboard: React.FC<{ isVisible: boolean }> = ({ isVisible }) =
       <div className="flex items-center justify-between mb-3 sm:mb-4 md:mb-6">
         <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
           <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 lg:w-3 lg:h-3 bg-green-500 rounded-full animate-pulse"></div>
-          <span className="text-gray-900 text-xs sm:text-sm md:text-lg lg:text-sm font-medium truncate">Competitive Analysis</span>
+          <span className="text-gray-900 text-xs sm:text-sm md:text-lg lg:text-sm font-medium truncate">Wettbewerbsanalyse</span>
         </div>
-        <div className="text-xs md:text-sm lg:text-xs text-gray-400">Real-time</div>
+        <div className="text-xs md:text-sm lg:text-xs text-gray-400">Echtzeit</div>
       </div>
 
       {/* Key Metrics - Mobile first */}
       <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6">
         <div className="bg-gray-50 rounded-lg p-2 sm:p-3 md:p-4 border border-gray-200">
-          <div className="text-xs md:text-sm lg:text-xs text-gray-600 mb-0.5 sm:mb-1 md:mb-2 truncate">Performance Lead</div>
+          <div className="text-xs md:text-sm lg:text-xs text-gray-600 mb-0.5 sm:mb-1 md:mb-2 truncate">Leistungsvorteil</div>
           <div className="text-base sm:text-lg md:text-2xl lg:text-xl font-bold text-green-600">
             <AnimatedCounter end={27} suffix="%" />
           </div>
           <div className="text-xs md:text-sm lg:text-xs text-green-600 flex items-center gap-1 truncate">
             <ArrowUp className="w-3 h-3 md:w-4 md:h-4 lg:w-3 lg:h-3 flex-shrink-0" />
-            <span className="truncate">vs closest</span>
+            <span className="truncate">vs. nächster</span>
           </div>
         </div>
         <div className="bg-gray-50 rounded-lg p-2 sm:p-3 md:p-4 border border-gray-200">
-          <div className="text-xs md:text-sm lg:text-xs text-gray-600 mb-0.5 sm:mb-1 md:mb-2">Market Position</div>
+          <div className="text-xs md:text-sm lg:text-xs text-gray-600 mb-0.5 sm:mb-1 md:mb-2">Marktposition</div>
           <div className="text-base sm:text-lg md:text-2xl lg:text-xl font-bold text-blue-600">
             #1
           </div>
-          <div className="text-xs md:text-sm lg:text-xs text-blue-600 truncate">Industry leader</div>
+          <div className="text-xs md:text-sm lg:text-xs text-blue-600 truncate">Branchenführer</div>
         </div>
       </div>
 
       {/* Performance Comparison Chart - Mobile optimized */}
       <div className="space-y-2 flex-grow flex flex-col">
-        <div className="text-xs md:text-sm lg:text-xs text-gray-600 mb-1 sm:mb-2 md:mb-3">Performance Comparison</div>
+        <div className="text-xs md:text-sm lg:text-xs text-gray-600 mb-1 sm:mb-2 md:mb-3">Leistungsvergleich</div>
         <div className="relative flex-grow bg-gray-50 rounded-lg border border-gray-200 p-2 sm:p-3 md:p-4 min-h-[120px] sm:min-h-[140px] md:min-h-[180px] lg:min-h-[160px]">
           <div className="space-y-2 sm:space-y-3 md:space-y-4 lg:space-y-4 h-full flex flex-col justify-center">
             {competitors.map((comp, index) => (
@@ -420,7 +420,7 @@ const CompetitionDashboard: React.FC<{ isVisible: boolean }> = ({ isVisible }) =
       {/* Bottom Status - Compact */}
       <div className="mt-2 sm:mt-3 md:mt-4 pt-2 sm:pt-3 md:pt-4 border-t border-gray-200">
         <div className="flex items-center justify-between">
-          <div className="text-xs md:text-sm lg:text-xs text-gray-600">Analysis Status</div>
+          <div className="text-xs md:text-sm lg:text-xs text-gray-600">Analysestatus</div>
           <div className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 lg:w-2 lg:h-2 bg-green-500 rounded-full animate-pulse"></div>
             <span className="text-xs md:text-sm lg:text-xs text-green-600">Live</span>
@@ -441,37 +441,37 @@ export const BenefitsSection: React.FC = () => {
   const benefits = [
     {
       icon: Zap,
-      title: "Speed Up Every Workflow",
-      description: "Our automation systems handle tasks instantly, from emails to lead management and support. This allows your team to operate faster, stay focused, and get more done without additional effort.",
+      title: "Beschleunigen Sie jeden Workflow",
+      description: "Unsere Automatisierungssysteme bearbeiten Aufgaben sofort, von E-Mails über Lead-Verwaltung bis hin zum Support. Dies ermöglicht Ihrem Team, schneller zu arbeiten, konzentriert zu bleiben und ohne zusätzliche Mühe mehr zu erreichen.",
       features: [
-        "Instant task processing",
-        "Email automation", 
-        "Lead management",
-        "24/7 support handling"
+        "Sofortige Aufgabenverarbeitung",
+        "E-Mail-Automatisierung",
+        "Lead-Verwaltung",
+        "24/7 Support-Bearbeitung"
       ],
       dashboard: TaskDashboard
     },
     {
       icon: DollarSign,
-      title: "Reduce Operating Costs",
-      description: "Automated workflows remove the need for manual input and repetitive processes. This means fewer errors, lower overhead, and more room to reinvest in your business growth.",
+      title: "Reduzieren Sie Betriebskosten",
+      description: "Automatisierte Workflows eliminieren die Notwendigkeit manueller Eingaben und repetitiver Prozesse. Dies bedeutet weniger Fehler, niedrigere Gemeinkosten und mehr Raum, um in Ihr Geschäftswachstum zu reinvestieren.",
       features: [
-        "Lower overhead costs",
-        "Reduced human errors",
-        "Automated processes", 
-        "Better ROI"
+        "Niedrigere Gemeinkosten",
+        "Weniger menschliche Fehler",
+        "Automatisierte Prozesse",
+        "Bessere ROI"
       ],
       dashboard: CostDashboard
     },
     {
       icon: TrendingUp,
-      title: "Stay Competitive", 
-      description: "AI adoption is no longer optional. Companies that embrace automation today will lead their industries tomorrow, while others risk falling behind as the market evolves.",
+      title: "Bleiben Sie wettbewerbsfähig",
+      description: "KI-Adoption ist nicht länger optional. Unternehmen, die Automatisierung heute nutzen, werden morgen ihre Branchen anführen, während andere Gefahr laufen, zurückzubleiben.",
       features: [
-        "Industry leadership",
-        "Future-proof solutions",
-        "Market advantage",
-        "Scalable growth"
+        "Branchenführerschaft",
+        "Zukunftssichere Lösungen",
+        "Wettbewerbsvorteil",
+        "Skalierbares Wachstum"
       ],
       dashboard: CompetitionDashboard
     }
@@ -553,24 +553,24 @@ export const BenefitsSection: React.FC = () => {
             <h2 className={"text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 md:mb-8 text-white leading-tight transition-all duration-800 ease-out " + (
               headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
             )}>
-              Achieve more 
+              Erreichen Sie mehr
               <br />
-              with 
+              mit
               <span className="text-white">
-                less effort
+                weniger Aufwand
               </span>
             </h2>
             <p className={"text-sm sm:text-base md:text-xl text-white/90 max-w-xs sm:max-w-sm md:max-w-3xl mx-auto leading-relaxed px-2 sm:px-4 md:px-8 transition-all duration-800 delay-200 ease-out " + (
               headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             )}>
               <span className="block sm:hidden">
-                Replace repetitive tasks with AI automation. Get measurable results from day one.
+                Ersetzen Sie repetitive Aufgaben durch KI-Automatisierung. Erhalten Sie messbare Ergebnisse vom ersten Tag an.
               </span>
               <span className="hidden sm:block md:hidden">
-                Replace repetitive tasks with AI and free up time for real growth. Our automation solutions deliver measurable results.
+                Ersetzen Sie repetitive Aufgaben durch KI und gewinnen Sie Zeit für echtes Wachstum. Unsere Automatisierungslösungen liefern messbare Ergebnisse.
               </span>
               <span className="hidden md:block">
-                Replace repetitive tasks with AI and free up time for real growth. Our automation solutions deliver measurable results from day one.
+                Ersetzen Sie repetitive Aufgaben durch KI und gewinnen Sie Zeit für echtes Wachstum. Unsere Automatisierungslösungen liefern messbare Ergebnisse vom ersten Tag an.
               </span>
             </p>
           </div>
@@ -579,21 +579,21 @@ export const BenefitsSection: React.FC = () => {
           <h2 className={"hidden lg:block text-6xl font-bold mb-6 text-white leading-tight transition-all duration-800 ease-out " + (
             headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
           )}>
-            Achieve more 
+            Erreichen Sie mehr
             <br />
-            with 
+            mit
             <span className="text-white">
-              less effort
+              weniger Aufwand
             </span>
           </h2>
-          
+
           {/* Desktop Subtitle (lg breakpoint and above) */}
           <p className={"hidden lg:block text-xl text-white/90 max-w-3xl mx-auto leading-relaxed transition-all duration-800 delay-200 ease-out " + (
             headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           )}>
-            Replace repetitive tasks with AI and free up time for real growth.
+            Ersetzen Sie repetitive Aufgaben durch KI und gewinnen Sie Zeit für echtes Wachstum.
             <br className="hidden md:block" />
-            Our automation solutions deliver measurable results from day one.
+            Unsere Automatisierungslösungen liefern messbare Ergebnisse vom ersten Tag an.
           </p>
         </div>
 
