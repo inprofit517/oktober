@@ -34,10 +34,10 @@ export const Navbar: React.FC = () => {
   };
 
   const navItems = [
-    { name: 'Solutions', action: () => scrollToSection('solutions') },
+    { name: 'Lösungen', action: () => scrollToSection('solutions') },
     { name: 'Demo', action: () => scrollToSection('demo') },
     { name: 'Team', action: () => scrollToSection('team') },
-    { name: 'Contact', action: () => {
+    { name: 'Kontakt', action: () => {
       // Trigger contact form by dispatching a custom event
       window.dispatchEvent(new CustomEvent('showContactForm'));
       setIsOpen(false);
