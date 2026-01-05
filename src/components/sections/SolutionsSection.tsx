@@ -15,9 +15,9 @@ interface Solution {
 const solutionsData: Solution[] = [
   {
     id: "crm",
-    title: "Close more deals with AI",
-    description: "Streamline your entire sales pipeline with intelligent automation.\nInstantly qualify prospects and identify high value opportunities.\nEliminate manual tasks, empowering your team to focus on closing.\nAchieve consistent growth and maximize your sales efficiency.",
-    mobileDescription: "Automate sales pipeline.\nQualify prospects instantly.\nEliminate manual tasks.\nFocus team on closing deals.",
+    title: "Schließen Sie mehr Deals mit KI",
+    description: "Optimieren Sie Ihre gesamte Sales-Pipeline mit intelligenter Automatisierung.\nQualifizieren Sie Prospects sofort und identifizieren Sie hochwertige Gelegenheiten.\nEleminieren Sie manuelle Aufgaben und befähigen Ihr Team, sich auf das Closing zu konzentrieren.\nErreichen Sie konsistentes Wachstum und maximieren Sie Ihre Sales-Effizienz.",
+    mobileDescription: "Automatisieren Sie Sales-Pipeline.\nQualifizieren Sie Prospects sofort.\nEleminieren Sie manuelle Aufgaben.\nFokussieren Sie das Team auf Abschlüsse.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-full h-full">
         <defs>
@@ -33,9 +33,9 @@ const solutionsData: Solution[] = [
   },
   {
     id: "lead-gen",
-    title: "Turn conversations into clients",
-    description: "Target ideal prospects using AI driven outreach campaigns.\nDeliver personalized messages at scale, converting more leads.\nAutomate lead nurturing, ensuring warm handoffs to sales.\nConsistently fill your pipeline and drive significant revenue.",
-    mobileDescription: "Target ideal prospects.\nSend personalized messages.\nNurture leads automatically.\nFill calendar consistently.",
+    title: "Wandeln Sie Gespräche in Kunden um",
+    description: "Zielgruppe Ihrer idealen Prospects mit KI-gesteuerten Outreach-Kampagnen.\nLiefern Sie personalisierte Nachrichten im großen Maßstab und konvertieren Sie mehr Leads.\nAutomatisieren Sie Lead-Nurturing und stellen Sie warme Übergaben an den Vertrieb sicher.\nFüllen Sie Ihre Pipeline konsistent auf und generieren Sie erhebliche Einnahmen.",
+    mobileDescription: "Zielgruppe Ihrer idealen Prospects.\nSenden Sie personalisierte Nachrichten.\nNutzen Sie Lead-Nurturing automatisch.\nFüllen Sie Ihren Kalender konsistent auf.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-full h-full">
         <defs>
@@ -51,9 +51,9 @@ const solutionsData: Solution[] = [
   },
   {
     id: "support",
-    title: "Instant answers. Zero wait time.",
-    description: "Provide immediate, accurate customer responses with 24/7 AI support.\nHandle high volumes of inquiries without increasing staffing.\nResolve complex issues seamlessly using natural language AI.\nEnhance customer satisfaction and build lasting loyalty.",
-    mobileDescription: "Provide instant responses.\nHandle high volume inquiries.\nResolve complex issues.\nBoost satisfaction and loyalty.",
+    title: "Sofortige Antworten. Keine Wartezeit.",
+    description: "Bieten Sie sofortige, genaue Kundenantworten mit 24/7 KI-Support.\nBearbeiten Sie hohe Anfragevolumina ohne zusätzliches Personal.\nLösen Sie komplexe Probleme nahtlos mit natürlicher KI.\nVerbessern Sie die Kundenzufriedenheit und bauen Sie dauerhafte Loyalität auf.",
+    mobileDescription: "Bieten Sie sofortige Antworten.\nBearbeiten Sie hohe Anfragevolumina.\nLösen Sie komplexe Probleme.\nVerbessern Sie Zufriedenheit und Loyalität.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-full h-full">
         <defs>
@@ -69,9 +69,9 @@ const solutionsData: Solution[] = [
   },
   {
     id: "voice",
-    title: "AI calls that drive results",
-    description: "Automate incoming calls, qualifying leads and routing efficiently.\nDeliver natural sounding interactions that reflect your brand.\nProvide real time customer service without expanding your team.\nCapture every opportunity by ensuring prompt, intelligent responses.",
-    mobileDescription: "Answer every call instantly.\nQualify leads automatically.\nProvide seamless service.\nNever miss opportunities.",
+    title: "KI-Anrufe, die Ergebnisse liefern",
+    description: "Automatisieren Sie eingehende Anrufe, qualifizieren Sie Leads und leiten Sie effizient weiter.\nBieten Sie natürlich klingende Interaktionen, die Ihre Marke widerspiegeln.\nBieten Sie Kundenservice in Echtzeit, ohne Ihr Team zu erweitern.\nNutzen Sie jede Gelegenheit, indem Sie schnelle, intelligente Antworten sicherstellen.",
+    mobileDescription: "Beantworten Sie jeden Anruf sofort.\nQualifizieren Sie Leads automatisch.\nBieten Sie nahtlose Serviceleistungen.\nVerpassen Sie niemals Gelegenheiten.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-full h-full">
         <defs>
@@ -299,12 +299,12 @@ export const SolutionsSection: React.FC = () => {
               <span className={`inline-block transition-all duration-700 delay-200 ${
                 isVisible ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
               }`}>
-                Transform Your Business with
+                Transformieren Sie Ihr Geschäft mit
               </span><br />
               <span className={`relative inline-block transition-all duration-700 delay-500 leading-tight ${
                 isVisible ? 'translate-x-0 opacity-100 scale-100' : '-translate-x-8 opacity-0 scale-95'
               }`}>
-                <span 
+                <span
                   className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 transform origin-left"
                   style={{
                     transform: `scaleX(${highlightProgress})`,
@@ -313,17 +313,17 @@ export const SolutionsSection: React.FC = () => {
                   }}
                 ></span>
                 <span className="relative z-10 text-white font-bold px-4 py-2">
-                  Intelligent Automation
+                  Intelligenter Automatisierung
                 </span>
               </span>
             </span>
             <span className="md:hidden">
-              <span className="text-5xl">Transform with</span>
+              <span className="text-5xl">Transformieren mit</span>
               <br />
               <span className={`relative inline-block text-3xl leading-tight mt-2 ${
                 isVisible ? 'translate-x-0 opacity-100 scale-100' : '-translate-x-8 opacity-0 scale-95'
               }`}>
-                <span 
+                <span
                   className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 transform origin-left"
                   style={{
                     transform: `scaleX(${highlightProgress})`,
@@ -332,7 +332,7 @@ export const SolutionsSection: React.FC = () => {
                   }}
                 ></span>
                 <span className="relative z-10 text-white font-bold px-2 py-1">
-                  Intelligent Automation
+                  Intelligenter Automatisierung
                 </span>
               </span>
             </span>
@@ -341,12 +341,12 @@ export const SolutionsSection: React.FC = () => {
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
           }`} style={{ lineHeight: '1.4' }}>
             <span className="block md:hidden">
-              Streamline operations and boost
+              Optimieren Sie Ihre Betriebsabläufe
               <br />
-              efficiency with AI-powered solutions.
+              und steigern Sie die Effizienz mit KI-gestützten Lösungen.
             </span>
             <span className="hidden md:block">
-              Streamline operations and boost efficiency with our AI-powered solutions.
+              Optimieren Sie Ihre Betriebsabläufe und steigern Sie die Effizienz mit unseren KI-gestützten Lösungen.
             </span>
           </p>
         </div>
@@ -375,25 +375,25 @@ export const SolutionsSection: React.FC = () => {
               {solution.id === 'crm' && (
                 <>
                   <Users className="w-4 h-4" />
-                  CRM System
+                  CRM-System
                 </>
               )}
               {solution.id === 'lead-gen' && (
                 <>
                   <Target className="w-4 h-4" />
-                  Lead Generation
+                  Lead-Generierung
                 </>
               )}
               {solution.id === 'support' && (
                 <>
                   <Headphones className="w-4 h-4" />
-                  Customer Support
+                  Kundensupport
                 </>
               )}
               {solution.id === 'voice' && (
                 <>
                   <Mic className="w-4 h-4" />
-                  Voice Agent
+                  Sprach-Agent
                 </>
               )}
             </Button>
