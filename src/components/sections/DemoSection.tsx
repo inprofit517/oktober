@@ -25,8 +25,8 @@ export const DemoSection: React.FC = () => {
 
   const demos = [
     {
-      title: "Support Chatbot",
-      description: "Intelligent AI assistant that provides 24/7 customer support with natural language understanding and contextual responses.",
+      title: "Support-Chatbot",
+      description: "Intelligenter KI-Assistent, der 24/7 Kundensupport mit natürlicher Sprachverarbeitung und kontextabhängigen Antworten bereitstellt.",
       icon: (
         <svg viewBox="0 0 24 24" className="w-full h-full">
           <defs>
@@ -39,16 +39,16 @@ export const DemoSection: React.FC = () => {
         </svg>
       ),
       features: [
-        "Natural language processing",
-        "Multi-language support", 
-        "Sentiment analysis",
-        "Escalation to human agents",
-        "Knowledge base integration"
+        "Natürliche Sprachverarbeitung",
+        "Mehrsprachige Unterstützung",
+        "Sentimentanalyse",
+        "Eskalation an menschliche Mitarbeiter",
+        "Integration der Wissensdatenbank"
       ]
     },
     {
-      title: "AI Prospecting",
-      description: "Smart email automation that personalizes outreach campaigns and nurtures leads through intelligent conversation flows.",
+      title: "KI-Kundenakquise",
+      description: "Intelligente E-Mail-Automatisierung, die Outreach-Kampagnen personalisiert und Leads durch intelligente Gesprächsabläufe pflegt.",
       icon: (
         <svg viewBox="0 0 24 24" className="w-full h-full">
           <defs>
@@ -61,16 +61,16 @@ export const DemoSection: React.FC = () => {
         </svg>
       ),
       features: [
-        "Personalized email generation",
-        "Lead scoring and qualification",
-        "A/B testing optimization", 
-        "CRM integration",
-        "Performance analytics"
+        "Personalisierte E-Mail-Generierung",
+        "Lead-Bewertung und -Qualifizierung",
+        "A/B-Test-Optimierung",
+        "CRM-Integration",
+        "Leistungsanalysen"
       ]
     },
     {
-      title: "Voice Agent",
-      description: "Advanced voice AI that handles phone calls with human-like conversation capabilities and real-time response generation.",
+      title: "Sprach-Agent",
+      description: "Fortgeschrittene Voice-KI, die Telefonanrufe mit menschenähnlichen Gesprächsfähigkeiten und Echtzeit-Antwortgenerierung verarbeitet.",
       icon: (
         <svg viewBox="0 0 24 24" className="w-full h-full">
           <defs>
@@ -83,11 +83,11 @@ export const DemoSection: React.FC = () => {
         </svg>
       ),
       features: [
-        "Natural speech synthesis",
-        "Real-time conversation",
-        "Call routing and transfer",
-        "Voice analytics", 
-        "Multi-accent recognition"
+        "Natürliche Sprachsynthese",
+        "Echtzeit-Gespräch",
+        "Anrufweiterleitung und -übertragung",
+        "Sprachanalysen",
+        "Mehrsprachige Akzentunerkennung"
       ]
     }
   ];
@@ -150,20 +150,20 @@ export const DemoSection: React.FC = () => {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Experience the Power of
+            Erleben Sie die Kraft der
             <br />
             <span className="bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-              AI Automation
+              KI-Automatisierung
             </span>
           </h2>
           <p className="text-lg text-white/90 max-w-4xl mx-auto leading-relaxed">
             <span className="hidden md:block">
-              Watch our AI agents in action. Each demo showcases real-world capabilities that
+              Sehen Sie unsere KI-Agenten in Aktion. Jede Demo zeigt Echtzeit-Fähigkeiten, die
               <br />
-              transform how businesses operate, communicate, and grow.
+              die Art und Weise verändern, wie Unternehmen tätig sind, kommunizieren und wachsen.
             </span>
             <span className="md:hidden">
-              Watch our AI agents in action. Each demo showcases real-world capabilities that transform how businesses operate, communicate, and grow.
+              Sehen Sie unsere KI-Agenten in Aktion. Jede Demo zeigt Echtzeit-Fähigkeiten, die die Art und Weise verändern, wie Unternehmen tätig sind, kommunizieren und wachsen.
             </span>
           </p>
         </div>
@@ -199,7 +199,7 @@ export const DemoSection: React.FC = () => {
                 
                 <div className="text-center">
                   <Button className="w-full bg-gradient-to-r from-blue-300 to-blue-900 hover:from-blue-400 hover:to-blue-950 text-white font-medium px-6 py-3 rounded-lg transition-all duration-300">
-                    Try Now
+                    Jetzt Ausprobieren
                   </Button>
                 </div>
               </div>
@@ -215,15 +215,15 @@ export const DemoSection: React.FC = () => {
               <div className="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
                 <div className="flex-1">
                   <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
-                    Ready to Transform Your Business?
+                    Bereit, Ihr Unternehmen zu transformieren?
                   </h3>
                   <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                    See how our AI agents can revolutionize your operations. Get a personalized demo tailored to your business needs.
+                    Sehen Sie, wie unsere KI-Agenten Ihre Abläufe revolutionieren können. Erhalten Sie eine personalisierte Demo, die auf Ihre geschäftlichen Anforderungen zugeschnitten ist.
                   </p>
                 </div>
                 <div className="flex-shrink-0">
                   <Button className="w-full md:w-auto bg-gradient-to-r from-blue-300 to-blue-900 hover:from-blue-400 hover:to-blue-950 text-white font-medium px-8 py-3 rounded-lg transition-all duration-300">
-                    Get Your Free Demo
+                    Holen Sie sich Ihre kostenlose Demo
                   </Button>
                 </div>
               </div>
