@@ -25,7 +25,7 @@ export const DemoSection: React.FC = () => {
 
   const demos = [
     {
-      title: "Support-Chatbot",
+      title: "Support Chatbot",
       description: "Intelligenter KI-Assistent, der 24/7 Kundensupport mit natürlicher Sprachverarbeitung und kontextabhängigen Antworten bereitstellt.",
       icon: (
         <svg viewBox="0 0 24 24" className="w-full h-full">
@@ -47,29 +47,7 @@ export const DemoSection: React.FC = () => {
       ]
     },
     {
-      title: "KI-Kundenakquise",
-      description: "Intelligente E-Mail-Automatisierung, die Outreach-Kampagnen personalisiert und Leads durch intelligente Gesprächsabläufe pflegt.",
-      icon: (
-        <svg viewBox="0 0 24 24" className="w-full h-full">
-          <defs>
-            <linearGradient id="prospectGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#93c5fd" />
-              <stop offset="100%" stopColor="#1e3a8a" />
-            </linearGradient>
-          </defs>
-          <path fill="url(#prospectGradient)" d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-        </svg>
-      ),
-      features: [
-        "Personalisierte E-Mail-Generierung",
-        "Lead-Bewertung und -Qualifizierung",
-        "A/B-Test-Optimierung",
-        "CRM-Integration",
-        "Leistungsanalysen"
-      ]
-    },
-    {
-      title: "Sprach-Agent",
+      title: "Voice Agent",
       description: "Fortgeschrittene Voice-KI, die Telefonanrufe mit menschenähnlichen Gesprächsfähigkeiten und Echtzeit-Antwortgenerierung verarbeitet.",
       icon: (
         <svg viewBox="0 0 24 24" className="w-full h-full">
