@@ -21,41 +21,27 @@ const AIAgentDemo: React.FC = () => {
     {
       id: "support",
       name: "Support Chatbot",
-      description: "Provides 24/7 intelligent customer support with natural language processing and instant problem resolution.",
+      description: "Intelligenter KI-Assistent, der 24/7 Kundensupport mit natürlicher Sprachverarbeitung und kontextabhängigen Antworten bereitstellt.",
       icon: MessageCircle,
       features: [
-        "Natural language understanding",
-        "Instant response time",
-        "Multi-channel support",
-        "Knowledge base integration"
+        "Natürliche Sprachverarbeitung",
+        "Mehrsprachige Unterstützung",
+        "Sentimentanalyse",
+        "Eskalation an menschliche Mitarbeiter"
       ],
       demoUrl: "#demo-support",
       color: "from-blue-500 to-cyan-500"
     },
     {
-      id: "prospecting",
-      name: "AI Prospecting",
-      description: "Automatically identifies and qualifies potential customers using advanced AI algorithms and data analysis.",
-      icon: Mail,
-      features: [
-        "Lead qualification",
-        "Automated outreach",
-        "CRM integration",
-        "Performance analytics"
-      ],
-      demoUrl: "#demo-prospecting",
-      color: "from-blue-600 to-blue-400"
-    },
-    {
       id: "voice",
       name: "Voice Agent",
-      description: "Handles phone calls with natural voice interactions, appointment scheduling, and customer inquiries.",
+      description: "Fortgeschrittene Voice-KI, die Telefonanrufe mit menschenähnlichen Gesprächsfähigkeiten und Echtzeit-Antwortgenerierung verarbeitet.",
       icon: Bot,
       features: [
-        "Natural voice synthesis",
-        "Call handling automation",
-        "Appointment scheduling",
-        "Real-time transcription"
+        "Natürliche Sprachsynthese",
+        "Echtzeit-Gespräch",
+        "Anrufweiterleitung und -übertragung",
+        "Sprachanalysen"
       ],
       demoUrl: "#demo-voice",
       color: "from-cyan-500 to-blue-500"
@@ -173,13 +159,13 @@ const AIAgentDemo: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-5xl md:text-5xl font-bold text-white mb-6">
-              <span className="block md:inline">Experience</span>{' '}
-              <span className="block md:inline">Our AI Agents</span>
+              <span className="block md:inline">Erleben Sie die Kraft der</span>{' '}
+              <span className="block md:inline">KI-Automatisierung</span>
             </h2>
             <p className="text-lg md:text-xl text-blue-200 max-w-3xl mx-auto">
-              <span className="block md:inline">Watch our AI agents in action</span>{' '}
-              <span className="block md:inline">with real-world capabilities<span className="md:hidden">.</span></span>
-              <span className="hidden md:block">that transform how businesses operate, communicate, and grow.</span>
+              <span className="block md:inline">Sehen Sie unsere KI-Agenten in Aktion</span>{' '}
+              <span className="block md:inline">mit Echtzeit-Fähigkeiten<span className="md:hidden">.</span></span>
+              <span className="hidden md:block">die die Art und Weise verändern, wie Unternehmen tätig sind, kommunizieren und wachsen.</span>
             </p>
           </motion.div>
 
@@ -266,7 +252,7 @@ const AIAgentDemo: React.FC = () => {
                       onClick={() => handleDemoClick(agent.demoUrl)}
                       className={`w-full bg-gradient-to-r ${agent.color} text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group/btn`}
                     >
-                      Try Demo
+                      Jetzt Ausprobieren
                       <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                     </motion.button>
                   </div>
@@ -316,8 +302,8 @@ const AIAgentDemo: React.FC = () => {
             className="text-center mt-16"
           >
             <p className="text-blue-200 mb-6">
-              <span className="block md:inline">Ready to transform your business</span>{' '}
-              <span className="block md:inline">with AI automation?</span>
+              <span className="block md:inline">Bereit, Ihr Unternehmen zu transformieren</span>{' '}
+              <span className="block md:inline">mit KI-Automatisierung?</span>
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -328,8 +314,8 @@ const AIAgentDemo: React.FC = () => {
               {/* Glass button glow effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-cyan-400/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl blur-sm" />
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/30 via-cyan-400/30 to-blue-500/30 opacity-0 group-hover:opacity-50 transition-opacity duration-300 rounded-xl blur-xl -z-10" />
-              
-              <span className="relative z-10">Get Your Free Demo</span>
+
+              <span className="relative z-10">Holen Sie sich Ihre kostenlose Demo</span>
               <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
             </motion.button>
           </motion.div>
