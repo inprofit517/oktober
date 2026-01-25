@@ -153,12 +153,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             {/* Mobile version */}
             <div className="lg:hidden space-y-8 pb-20">
               <div className="text-center space-y-4">
-                <h1 className="text-5xl font-bold leading-tight">
-                  <span className="bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent">
+                <h1 className="text-3xl md:text-5xl font-bold leading-tight">
+                  <span className="block whitespace-nowrap bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent">
                     Automatisieren Sie
                   </span>
-                  <br />
-                  <span className="text-foreground relative inline-block">
+                  <span className="block whitespace-nowrap text-foreground relative inline-block">
                     Ihr Unternehmen
                     <span className="absolute -bottom-1 left-0 right-0 h-1 bg-blue-200 rounded-full" style={{width: '100%'}}></span>
                   </span>
