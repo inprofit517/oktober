@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Cal, { getCalApi } from "@calcom/embed-react";
 import { Bot, Zap, Cpu, Network, Calendar, Home } from "lucide-react";
+import BookingModal from "./BookingModal";
 
 const StaticGradientBackground: React.FC = () => {
   return (
@@ -115,22 +115,10 @@ interface ContactFormProps {
 }
 
 const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
-
-    (async function () {
-      const cal = await getCalApi({ namespace: "erstgesprach" });
-      cal("ui", {
-        theme: "light",
-        cssVarsPerTheme: {
-          light: {
-            "cal-brand": "#3fa9ff"
-          }
-        },
-        hideEventTypeDetails: false,
-        layout: "month_view"
-      });
-    })();
   }, []);
 
   const handleReturnHome = () => {
@@ -205,23 +193,22 @@ const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
               </div>
             </motion.div>
 
-            {/* Cal.com Embed */}
+            {/* Booking Button */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative w-full h-[800px]"
+              className="relative flex justify-center"
             >
-              <Cal
-                namespace="erstgesprach"
-                calLink="aitomaticly/erstgesprach"
-                style={{ width: "100%", height: "100%", overflow: "scroll" }}
-                config={{
-                  layout: "month_view",
-                  useSlotsViewOnSmallScreen: "true",
-                  theme: "light"
-                }}
-              />
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setIsModalOpen(true)}
+                className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold rounded-xl shadow-2xl transition-all duration-300 flex items-center space-x-3"
+              >
+                <Calendar className="w-6 h-6" />
+                <span>Termin buchen</span>
+              </motion.button>
             </motion.div>
 
             {/* Info Section */}
@@ -257,6 +244,9 @@ const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
           </div>
         </div>
       </div>
+
+      {/* Booking Modal */}
+      <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 };
