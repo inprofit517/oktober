@@ -165,8 +165,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
                 {/* AI Chip Container for Mobile */}
                 <div className="relative flex items-center justify-center px-4 mt-8 mb-6">
-                  <div className="w-full max-w-sm aspect-[2/1] rounded-xl backdrop-blur-sm border border-blue-300/40 flex items-center justify-center p-4" style={{ background: 'linear-gradient(135deg, #5BA3D0 0%, #4FA3FF 50%, #6B9FD6 100%)' }}>
-                    <div className="w-full h-full flex items-center justify-center">
+                  <div className="w-full max-w-sm rounded-xl backdrop-blur-sm border border-blue-300/40 flex items-center justify-center p-6" style={{ background: 'linear-gradient(135deg, #5BA3D0 0%, #4FA3FF 50%, #6B9FD6 100%)', minHeight: '180px', overflow: 'visible' }}>
+                    <div className="w-full h-full flex items-center justify-center" style={{ minHeight: '140px' }}>
                       <CpuArchitecture
                         className="w-full h-full"
                         text="AI"

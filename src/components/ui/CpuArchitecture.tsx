@@ -34,6 +34,8 @@ const CpuArchitecture = ({
         width={width}
         height={height}
         viewBox="0 0 200 100"
+        preserveAspectRatio="xMidYMid meet"
+        style={{ overflow: 'visible' }}
       >
         {/* Paths */}
         <g
@@ -238,11 +240,12 @@ const CpuArchitecture = ({
           <text
             x="100"
             y="52.5"
-            fontSize="7"
+            fontSize="8"
             fill={animateText ? "url(#cpu-text-gradient)" : "white"}
-            fontWeight="600"
-            letterSpacing="0.05em"
+            fontWeight="700"
+            letterSpacing="0.1em"
             textAnchor="middle"
+            style={{ paintOrder: 'stroke fill', userSelect: 'none' }}
           >
             {text}
           </text>
@@ -362,20 +365,21 @@ const CpuArchitecture = ({
             viewBox="0 0 10 10"
             refX="5"
             refY="5"
-            markerWidth={lineMarkerSize}
-            markerHeight={lineMarkerSize}
+            markerWidth="3"
+            markerHeight="3"
+            markerUnits="strokeWidth"
           >
             <circle
               id="innerMarkerCircle"
               cx="5"
               cy="5"
-              r="2"
-              fill="black"
-              stroke="#232323"
-              strokeWidth="0.5"
+              r="3"
+              fill="#1a1a1a"
+              stroke="#000000"
+              strokeWidth="0.8"
             >
               {animateMarkers && (
-                <animate attributeName="r" values="0; 3; 2" dur="0.5s" />
+                <animate attributeName="r" values="0; 3; 3" dur="0.5s" fill="freeze" />
               )}
             </circle>
           </marker>
@@ -428,75 +432,6 @@ const CpuArchitecture = ({
           </linearGradient>
         </defs>
       </svg>
-      <style jsx global>{`
-        .cpu-architecture {
-          offset-anchor: 10px 0px;
-          animation: animation-path;
-          animation-iteration-count: infinite;
-          animation-timing-function: cubic-bezier(0.75, -0.01, 0, 0.99);
-        }
-
-        .cpu-line-1 {
-          offset-path: path("M 10 20 h 79.5 q 5 0 5 5 v 30");
-          animation-duration: 5s;
-          animation-delay: 1s;
-        }
-
-        .cpu-line-2 {
-          offset-path: path("M 180 10 h -69.7 q -5 0 -5 5 v 40");
-          animation-delay: 6s;
-          animation-duration: 2s;
-        }
-
-        .cpu-line-3 {
-          offset-path: path("M 130 20 v 21.8 q 0 5 -5 5 h -25");
-          animation-delay: 4s;
-          animation-duration: 6s;
-        }
-
-        .cpu-line-4 {
-          offset-path: path("M 170 80 v -21.8 q 0 -5 -5 -5 h -65");
-          animation-delay: 3s;
-          animation-duration: 3s;
-        }
-
-        .cpu-line-5 {
-          offset-path: path(
-            "M 135 65 h 15 q 5 0 5 5 v 10 q 0 5 -5 5 h -39.8 q -5 0 -5 -5 v -35"
-          );
-          animation-delay: 9s;
-          animation-duration: 4s;
-        }
-
-        .cpu-line-6 {
-          offset-path: path("M 94.8 95 v -46");
-          animation-delay: 3s;
-          animation-duration: 7s;
-        }
-
-        .cpu-line-7 {
-          offset-path: path(
-            "M 88 88 v -15 q 0 -5 -5 -5 h -10 q -5 0 -5 -5 v -5 q 0 -5 5 -5 h 28"
-          );
-          animation-delay: 4s;
-          animation-duration: 4s;
-        }
-
-        .cpu-line-8 {
-          offset-path: path("M 30 30 h 25 q 5 0 5 5 v 6.5 q 0 5 5 5 h 35");
-          animation-delay: 3s;
-          animation-duration: 3s;
-        }
-
-        @keyframes animation-path {
-          0% {
-            offset-distance: 0%;
-          }
-          100% {
-            offset-distance: 100%;
-          }
-        }
-      `}</style>
     </>
   );
 };
