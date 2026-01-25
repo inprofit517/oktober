@@ -44,7 +44,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden pt-20">
+      <div className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden pt-20 lg:pt-20">
         <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-gray-50/30"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.8),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(255,255,255,0.6),transparent_40%)]"></div>
@@ -151,29 +151,31 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
 
             {/* Mobile version */}
-            <div className="lg:hidden space-y-8 pb-20">
-              <div className="text-center space-y-4">
-                <h1 className="text-3xl md:text-5xl font-bold leading-tight">
+            <div className="lg:hidden space-y-6 pb-20 pt-8">
+              <div className="text-center space-y-6">
+                <h1 className="text-3xl md:text-5xl font-bold leading-tight px-4">
                   <span className="block whitespace-nowrap bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent">
                     Automatisieren Sie
                   </span>
-                  <span className="block whitespace-nowrap text-foreground relative inline-block">
+                  <span className="block whitespace-nowrap text-foreground relative inline-block mt-2">
                     Ihr Unternehmen
                     <span className="absolute -bottom-1 left-0 right-0 h-1 bg-blue-200 rounded-full" style={{width: '100%'}}></span>
                   </span>
                 </h1>
 
                 {/* AI Chip Container for Mobile */}
-                <div className="relative flex items-center justify-center px-4 my-6">
-                  <div className="w-full max-w-md h-56 rounded-xl backdrop-blur-sm border border-blue-300/40 flex items-center justify-center p-6" style={{ background: 'linear-gradient(135deg, #5BA3D0 0%, #4FA3FF 50%, #6B9FD6 100%)' }}>
-                    <CpuArchitecture
-                      className="w-full h-full"
-                      text="AI"
-                      showCpuConnections={true}
-                      animateText={true}
-                      animateLines={true}
-                      animateMarkers={true}
-                    />
+                <div className="relative flex items-center justify-center px-4 mt-8 mb-6">
+                  <div className="w-full max-w-sm aspect-[2/1] rounded-xl backdrop-blur-sm border border-blue-300/40 flex items-center justify-center p-4" style={{ background: 'linear-gradient(135deg, #5BA3D0 0%, #4FA3FF 50%, #6B9FD6 100%)' }}>
+                    <div className="w-full h-full flex items-center justify-center">
+                      <CpuArchitecture
+                        className="w-full h-full"
+                        text="AI"
+                        showCpuConnections={true}
+                        animateText={true}
+                        animateLines={true}
+                        animateMarkers={true}
+                      />
+                    </div>
                   </div>
                 </div>
 
