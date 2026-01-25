@@ -162,6 +162,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     <span className="absolute -bottom-1 left-0 right-0 h-1 bg-blue-200 rounded-full" style={{width: '100%'}}></span>
                   </span>
                 </h1>
+
+                {/* AI Chip Container for Mobile */}
+                <div className="relative flex items-center justify-center px-4 my-6">
+                  <div className="w-full max-w-md h-56 rounded-xl backdrop-blur-sm border border-blue-300/40 flex items-center justify-center p-6" style={{ background: 'linear-gradient(135deg, #5BA3D0 0%, #4FA3FF 50%, #6B9FD6 100%)' }}>
+                    <CpuArchitecture
+                      className="w-full h-full"
+                      text="AI"
+                      showCpuConnections={true}
+                      animateText={true}
+                      animateLines={true}
+                      animateMarkers={true}
+                    />
+                  </div>
+                </div>
+
                 <p className="text-lg text-muted-foreground px-4 leading-relaxed" style={{ lineHeight: '1.4' }}>
                   Transformieren Sie Ihr Unternehmen mit modernster KI-Automatisierung.
                 </p>
