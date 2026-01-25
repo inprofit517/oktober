@@ -120,7 +120,16 @@ const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
 
     (async function () {
       const cal = await getCalApi({ namespace: "erstgesprach" });
-      cal("ui", { theme: "dark", hideEventTypeDetails: false, layout: "month_view" });
+      cal("ui", {
+        theme: "light",
+        cssVarsPerTheme: {
+          light: {
+            "cal-brand": "#0076ff"
+          }
+        },
+        hideEventTypeDetails: false,
+        layout: "month_view"
+      });
     })();
   }, []);
 
@@ -212,7 +221,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
                     config={{
                       layout: "month_view",
                       useSlotsViewOnSmallScreen: "true",
-                      theme: "dark"
+                      theme: "light"
                     }}
                   />
                 </div>
