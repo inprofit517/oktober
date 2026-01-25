@@ -2,7 +2,6 @@
 
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import { getCalApi } from "@calcom/embed-react";
 import { Bot, Zap, Cpu, Network, Calendar, Home } from "lucide-react";
 
 const StaticGradientBackground: React.FC = () => {
@@ -117,20 +116,6 @@ interface ContactFormProps {
 const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
-
-    (async function () {
-      const cal = await getCalApi({ namespace: "erstgesprach" });
-      cal("ui", {
-        theme: "light",
-        cssVarsPerTheme: {
-          light: {
-            "cal-brand": "#00b1ff"
-          }
-        },
-        hideEventTypeDetails: false,
-        layout: "month_view"
-      });
-    })();
   }, []);
 
   const handleReturnHome = () => {
