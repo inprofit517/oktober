@@ -22,10 +22,13 @@ export default function BookingModal({ isOpen, onClose }: { isOpen: boolean; onC
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm">
-      <div className="relative h-[650px] w-full max-w-4xl rounded-2xl bg-white shadow-2xl overflow-hidden">
-        <button onClick={onClose} className="absolute right-4 top-4 z-10 p-2 text-gray-500 hover:text-black">
-          <X size={24} />
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
+      <div className="relative h-[700px] w-full max-w-5xl rounded-2xl bg-white shadow-2xl overflow-hidden">
+        <button
+          onClick={onClose}
+          className="absolute right-5 top-5 z-20 p-2 bg-white/80 rounded-full text-gray-600 hover:text-black hover:bg-white transition-all shadow-lg"
+        >
+          <X size={20} />
         </button>
 
         <Cal
