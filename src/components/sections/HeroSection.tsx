@@ -114,7 +114,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   </Button>
                 </div>
 
-                <div className={`grid grid-cols-2 gap-6 pt-8 transition-all duration-1000 delay-700 ${
+                <div className={`flex justify-start gap-16 pt-8 transition-all duration-1000 delay-700 ${
                   isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
                 }`}>
                   <div className={`text-center transform transition-all duration-1000 delay-1000 ${
@@ -155,18 +155,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               <div className="text-center space-y-4">
                 <h1 className="text-5xl font-bold leading-tight">
                   <span className="bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent">
-                    {title}
+                    Automatisieren Sie
                   </span>
                   <br />
                   <span className="text-foreground relative inline-block">
-                    {typewriterWords[0]}
+                    Ihr Unternehmen
                     <span className="absolute -bottom-1 left-0 right-0 h-1 bg-blue-200 rounded-full" style={{width: '100%'}}></span>
                   </span>
                 </h1>
                 <p className="text-lg text-muted-foreground px-4 leading-relaxed" style={{ lineHeight: '1.4' }}>
-                  Transform your business with
-                  <br />
-                  cutting-edge AI automation.
+                  Transformieren Sie Ihr Unternehmen mit modernster KI-Automatisierung.
                 </p>
               </div>
 
