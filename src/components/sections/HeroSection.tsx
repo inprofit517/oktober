@@ -4,6 +4,7 @@ import { Button } from '../ui/button';
 import { AnimatedCounter } from '../ui/AnimatedCounter';
 import { Navbar } from './Navbar';
 import CpuArchitecture from '../ui/CpuArchitecture';
+import CpuArchitectureMobile from '../ui/CpuArchitectureMobile';
 
 interface HeroSectionProps {
   title?: string;
@@ -167,13 +168,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 <div className="relative flex items-center justify-center px-4 mt-8 mb-6">
                   <div className="w-full max-w-sm rounded-xl backdrop-blur-sm border border-blue-300/40 flex items-center justify-center p-6" style={{ background: 'linear-gradient(135deg, #5BA3D0 0%, #4FA3FF 50%, #6B9FD6 100%)', minHeight: '180px', overflow: 'visible' }}>
                     <div className="w-full h-full flex items-center justify-center" style={{ minHeight: '140px' }}>
-                      <CpuArchitecture
+                      <CpuArchitectureMobile
                         className="w-full h-full"
                         text="AI"
-                        showCpuConnections={true}
-                        animateText={true}
-                        animateLines={true}
-                        animateMarkers={true}
                       />
                     </div>
                   </div>

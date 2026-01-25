@@ -1,6 +1,7 @@
 /* Import animation styles before Tailwind */
 @import url('./styles/benefits-animation.css');
 @import url('./styles/cpu-animation.css');
+@import url('./styles/cpu-mobile-animation.css');
 
 @tailwind base;
 @tailwind components;
