@@ -172,7 +172,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
         </motion.div>
 
         <div className="container mx-auto px-4 py-32 md:py-20">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             {/* Header */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -213,11 +213,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
               className="relative"
             >
               <div className="bg-slate-800/40 backdrop-blur-xl border border-blue-500/20 rounded-2xl p-4 md:p-8 shadow-2xl">
-                <div className="w-full min-h-[700px] rounded-xl overflow-hidden">
+                <div className="w-full h-[800px] rounded-xl">
                   <Cal
                     namespace="erstgesprach"
                     calLink="aitomaticly/erstgesprach"
-                    style={{ width: "100%", height: "100%", minHeight: "700px", overflow: "scroll" }}
+                    style={{ width: "100%", height: "100%" }}
                     config={{
                       layout: "month_view",
                       useSlotsViewOnSmallScreen: "true",
