@@ -114,30 +114,22 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   </Button>
                 </div>
 
-                <div className={`grid grid-cols-3 gap-6 pt-8 transition-all duration-1000 delay-700 ${
+                <div className={`grid grid-cols-2 gap-6 pt-8 transition-all duration-1000 delay-700 ${
                   isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
                 }`}>
-                  <div className={`text-center transform transition-all duration-1000 delay-800 ${
-                    isVisible ? 'scale-100 opacity-100' : 'scale-75 opacity-0'
-                  }`}>
-                    <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent">
-                      <AnimatedCounter end={250} suffix="+" className="bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent" />
-                    </div>
-                    <div className="text-sm text-muted-foreground">Businesses Automated</div>
-                  </div>
                   <div className={`text-center transform transition-all duration-1000 delay-1000 ${
                     isVisible ? 'scale-100 opacity-100' : 'scale-75 opacity-0'
                   }`}>
                     <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent">
                       <AnimatedCounter end={80} suffix="%" className="bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent" />
                     </div>
-                    <div className="text-sm text-muted-foreground">Efficiency Increase</div>
+                    <div className="text-sm text-muted-foreground">Mehr Effizienz</div>
                   </div>
                   <div className={`text-center transform transition-all duration-1000 delay-1200 ${
                     isVisible ? 'scale-100 opacity-100' : 'scale-75 opacity-0'
                   }`}>
                     <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent">24/7</div>
-                    <div className="text-sm text-muted-foreground">Always Available</div>
+                    <div className="text-sm text-muted-foreground">Immer verfügbar</div>
                   </div>
                 </div>
               </div>
@@ -198,22 +190,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 </Button>
               </div>
 
-              <div className="grid grid-cols-3 gap-6 px-4">
-                <div className="text-center">
-                  <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent">
-                    <AnimatedCounter end={250} suffix="+" className="bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent" />
-                  </div>
-                  <div className="text-sm text-muted-foreground">Businesses Automated</div>
-                </div>
+              <div className="grid grid-cols-2 gap-6 px-4">
                 <div className="text-center">
                   <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent">
                     <AnimatedCounter end={80} suffix="%" className="bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent" />
                   </div>
-                  <div className="text-sm text-muted-foreground">Efficiency Increase</div>
+                  <div className="text-sm text-muted-foreground">Mehr Effizienz</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent">24/7</div>
-                  <div className="text-sm text-muted-foreground">Always Available</div>
+                  <div className="text-sm text-muted-foreground">Immer verfügbar</div>
                 </div>
               </div>
             </div>
