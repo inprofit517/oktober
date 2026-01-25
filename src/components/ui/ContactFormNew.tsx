@@ -124,7 +124,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
         theme: "light",
         cssVarsPerTheme: {
           light: {
-            "cal-brand": "#0076ff"
+            "cal-brand": "#3fa9ff"
           }
         },
         hideEventTypeDetails: false,
@@ -210,22 +210,18 @@ const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative"
+              className="relative w-full h-[800px]"
             >
-              <div className="bg-slate-800/40 backdrop-blur-xl border border-blue-500/20 rounded-2xl p-4 md:p-8 shadow-2xl">
-                <div className="w-full h-[800px] rounded-xl">
-                  <Cal
-                    namespace="erstgesprach"
-                    calLink="aitomaticly/erstgesprach"
-                    style={{ width: "100%", height: "100%" }}
-                    config={{
-                      layout: "month_view",
-                      useSlotsViewOnSmallScreen: "true",
-                      theme: "light"
-                    }}
-                  />
-                </div>
-              </div>
+              <Cal
+                namespace="erstgesprach"
+                calLink="aitomaticly/erstgesprach"
+                style={{ width: "100%", height: "100%", overflow: "scroll" }}
+                config={{
+                  layout: "month_view",
+                  useSlotsViewOnSmallScreen: "true",
+                  theme: "light"
+                }}
+              />
             </motion.div>
 
             {/* Info Section */}
