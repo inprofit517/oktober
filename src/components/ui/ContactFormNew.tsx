@@ -137,7 +137,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
   };
 
   return (
-    <div className="relative min-h-screen w-full">
+    <div className="relative min-h-screen w-full overflow-x-hidden">
       {/* Static Background - Fixed Position */}
       <StaticGradientBackground />
 
@@ -147,7 +147,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
       </div>
 
       {/* Scrollable Content */}
-      <div className="relative z-10">
+      <div className="relative z-10 overflow-x-hidden">
         {/* Home Button */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -205,13 +205,12 @@ const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative flex justify-center mb-12"
+              className="relative flex justify-center mb-12 w-full"
             >
-              <div className="w-full max-w-5xl bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden">
+              <div className="w-full max-w-6xl bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden">
                 <div
                   id="my-cal-inline-erstgesprach"
                   className="w-full"
-                  style={{ minHeight: '700px' }}
                 />
               </div>
             </motion.div>
