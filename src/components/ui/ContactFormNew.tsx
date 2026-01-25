@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import Cal, { getCalApi } from "@calcom/embed-react";
+import { BookerEmbed } from "@calcom/atoms";
 import { Bot, Zap, Cpu, Network, Calendar, Home } from "lucide-react";
 
 const StaticGradientBackground: React.FC = () => {
@@ -117,11 +117,6 @@ interface ContactFormProps {
 const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
-
-    (async function () {
-      const cal = await getCalApi({ namespace: "erstgesprach" });
-      cal("ui", { theme: "dark", hideEventTypeDetails: false, layout: "month_view" });
-    })();
   }, []);
 
   const handleReturnHome = () => {
@@ -205,14 +200,15 @@ const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
             >
               <div className="bg-slate-800/40 backdrop-blur-xl border border-blue-500/20 rounded-2xl p-4 md:p-8 shadow-2xl">
                 <div className="w-full min-h-[700px] rounded-xl overflow-hidden">
-                  <Cal
-                    namespace="erstgesprach"
-                    calLink="aitomaticly/erstgesprach"
-                    style={{ width: "100%", height: "100%", minHeight: "700px", overflow: "scroll" }}
-                    config={{
-                      layout: "month_view",
-                      useSlotsViewOnSmallScreen: "true",
-                      theme: "dark"
+                  <BookerEmbed
+                    eventSlug="erstgesprach"
+                    username="aitomaticly"
+                    view="month_view"
+                    customClassNames={{
+                      bookerContainer: "border-subtle border",
+                    }}
+                    onCreateBookingSuccess={() => {
+                      console.log("Buchung erfolgreich erstellt");
                     }}
                   />
                 </div>
