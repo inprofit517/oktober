@@ -6,3 +6,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Cal.com embed custom styles - remove padding for edge-to-edge look */
+[data-cal-namespace="erstgesprach"] {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+[data-cal-namespace="erstgesprach"] > div {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Remove default cal.com container padding */
+.cal-embed {
+  padding: 0 !important;
+}
+
+/* Optimize calendar layout spacing */
+[data-cal-namespace="erstgesprach"] [class*="calendar"] {
+  padding: 1rem !important;
+}
+
+[data-cal-namespace="erstgesprach"] [class*="sidebar"] {
+  padding: 1rem !important;
+}

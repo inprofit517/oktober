@@ -23,7 +23,7 @@ export default function BookingModal({ isOpen, onClose }: { isOpen: boolean; onC
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
-      <div className="relative h-[700px] w-full max-w-5xl rounded-2xl bg-white shadow-2xl overflow-hidden">
+      <div className="relative h-[85vh] w-full max-w-6xl rounded-2xl bg-white shadow-2xl overflow-hidden">
         <button
           onClick={onClose}
           className="absolute right-5 top-5 z-20 p-2 bg-white/80 rounded-full text-gray-600 hover:text-black hover:bg-white transition-all shadow-lg"
@@ -34,7 +34,7 @@ export default function BookingModal({ isOpen, onClose }: { isOpen: boolean; onC
         <Cal
           namespace="erstgesprach"
           calLink="aitomaticly/erstgesprach"
-          style={{ width: "100%", height: "100%", overflow: "scroll" }}
+          style={{ width: "100%", height: "100%", overflow: "auto" }}
           config={{ layout: "month_view", useSlotsViewOnSmallScreen: "true", theme: "light" }}
         />
       </div>
