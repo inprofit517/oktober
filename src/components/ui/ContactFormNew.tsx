@@ -116,6 +116,16 @@ interface ContactFormProps {
 const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
+
+    if (typeof window !== 'undefined' && (window as any).Cal) {
+      (window as any).Cal.ns.erstgesprach("inline", {
+        elementOrSelector:"#my-cal-inline-erstgesprach",
+        config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"},
+        calLink: "aitomaticly/erstgesprach",
+      });
+
+      (window as any).Cal.ns.erstgesprach("ui", {"theme":"light","hideEventTypeDetails":false,"layout":"month_view"});
+    }
   }, []);
 
   const handleReturnHome = () => {
@@ -190,24 +200,20 @@ const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
               </div>
             </motion.div>
 
-            {/* Booking Button */}
+            {/* Cal.eu Inline Embed */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative flex justify-center"
+              className="relative flex justify-center mb-12"
             >
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                data-cal-namespace="erstgesprach"
-                data-cal-link="aitomaticly/erstgesprach"
-                data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"}'
-                className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold rounded-xl shadow-2xl transition-all duration-300 flex items-center space-x-3"
-              >
-                <Calendar className="w-6 h-6" />
-                <span>Termin buchen</span>
-              </motion.button>
+              <div className="w-full max-w-5xl bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden">
+                <div
+                  id="my-cal-inline-erstgesprach"
+                  className="w-full"
+                  style={{ minHeight: '700px' }}
+                />
+              </div>
             </motion.div>
 
             {/* Info Section */}
