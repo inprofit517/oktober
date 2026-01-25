@@ -24,35 +24,35 @@ export const ProcessSection: React.FC = () => {
   const processSteps = [
     {
       step: "01",
-      title: "Discovery & Strategy",
-      description: "We analyze your current workflows to identify automation opportunities and design a comprehensive strategy tailored to your business goals.",
+      title: "Analyse & Strategie",
+      description: "Wir analysieren Ihre aktuellen Arbeitsabläufe, um Automatisierungsmöglichkeiten zu identifizieren und eine umfassende, auf Ihre Geschäftsziele zugeschnittene Strategie zu entwickeln.",
       features: [
-        "Workflow audit & analysis",
-        "Pain point identification",
-        "Custom automation strategy",
-        "ROI assessment & planning"
+        "Workflow-Analyse",
+        "Identifikation von Schwachstellen",
+        "Maßgeschneiderte Automatisierungsstrategie",
+        "ROI-Bewertung & Planung"
       ]
     },
     {
-      step: "02", 
-      title: "Development & Integration",
-      description: "Build and integrate AI solutions into your existing systems with minimal disruption to your operations.",
+      step: "02",
+      title: "Entwicklung & Integration",
+      description: "Wir entwickeln und integrieren KI-Lösungen in Ihre bestehenden Systeme mit minimaler Beeinträchtigung Ihrer Betriebsabläufe.",
       features: [
-        "Custom AI development",
-        "System integration",
-        "Data migration & setup",
-        "Testing & validation"
+        "Maßgeschneiderte KI-Entwicklung",
+        "Systemintegration",
+        "Datenmigration & Einrichtung",
+        "Testing & Validierung"
       ]
     },
     {
       step: "03",
-      title: "Launch & Optimization",
-      description: "Deploy your automation solutions and provide ongoing optimization to ensure maximum efficiency and ROI.",
+      title: "Launch & Optimierung",
+      description: "Wir setzen Ihre Automatisierungslösungen ein und bieten kontinuierliche Optimierung, um maximale Effizienz und ROI zu gewährleisten.",
       features: [
-        "Go-live support", 
-        "Performance monitoring",
-        "Continuous optimization",
-        "Training & documentation"
+        "Go-Live Support",
+        "Performance-Monitoring",
+        "Kontinuierliche Optimierung",
+        "Schulung & Dokumentation"
       ]
     }
   ];
@@ -120,25 +120,25 @@ export const ProcessSection: React.FC = () => {
         }`}>
           <h2 className="text-5xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight">
             <span className="hidden md:block">
-              <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-900 bg-clip-text text-transparent">Automate</span>
-              <span className="text-gray-900"> your workflows</span>
+              <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-900 bg-clip-text text-transparent">Automatisieren Sie</span>
+              <span className="text-gray-900"> Ihre Arbeitsabläufe</span>
               <br />
-              <span className="text-gray-900">in three clear steps</span>
+              <span className="text-gray-900">in drei klaren Schritten</span>
             </span>
             <span className="md:hidden">
-              Automate<br />in three steps
+              Automatisieren<br />in drei Schritten
             </span>
           </h2>
           <p className="text-lg text-gray-600 max-w-xl md:max-w-4xl mx-auto leading-relaxed" style={{ lineHeight: '1.4' }}>
             <span className="hidden md:block">
-              From discovery to optimization, our structured approach ensures
+              Von der Analyse bis zur Optimierung, unser strukturierter Ansatz sorgt für
               <br />
-              successful AI automation implementation for your business.
+              eine erfolgreiche KI-Automatisierung in Ihrem Unternehmen.
             </span>
             <span className="md:hidden">
-              From discovery to optimization, our
+              Von der Analyse bis zur Optimierung, unser
               <br />
-              structured approach ensures success.
+              strukturierter Ansatz sorgt für Erfolg.
             </span>
           </p>
         </div>
@@ -175,7 +175,7 @@ export const ProcessSection: React.FC = () => {
                     {/* Content */}
                     <div className="flex-1 pb-4">
                       <div className="mb-4">
-                        <div className="text-xs font-semibold text-blue-600 mb-1">STEP {process.step}</div>
+                        <div className="text-xs font-semibold text-blue-600 mb-1">SCHRITT {process.step}</div>
                         <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
                           {process.title}
                         </h3>

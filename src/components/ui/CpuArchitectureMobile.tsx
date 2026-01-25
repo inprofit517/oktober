@@ -21,7 +21,7 @@ const CpuArchitectureMobile = ({
     >
       {/* Paths */}
       <g
-        stroke="currentColor"
+        stroke="white"
         fill="none"
         strokeWidth="0.3"
         strokeDasharray="100 100"
@@ -216,12 +216,14 @@ const CpuArchitectureMobile = ({
         />
         {/* CPU Text */}
         <text
-          x="92"
+          x="100"
           y="52.5"
-          fontSize="7"
+          fontSize="8"
           fill="url(#cpu-mobile-text-gradient)"
-          fontWeight="600"
-          letterSpacing="0.05em"
+          fontWeight="700"
+          letterSpacing="0.1em"
+          textAnchor="middle"
+          style={{ paintOrder: 'stroke fill', userSelect: 'none' }}
         >
           {text}
         </text>
@@ -280,40 +282,45 @@ const CpuArchitectureMobile = ({
             stroke="white"
           />
         </mask>
-        {/* Gradients */}
+        {/* Gradients - All Blue for Mobile */}
         <radialGradient id="cpu-mobile-blue-grad" fx="1">
-          <stop offset="0%" stopColor="#00E8ED" />
-          <stop offset="50%" stopColor="#08F" />
+          <stop offset="0%" stopColor="#87CEEB" />
+          <stop offset="50%" stopColor="#4169E1" />
           <stop offset="100%" stopColor="transparent" />
         </radialGradient>
         <radialGradient id="cpu-mobile-yellow-grad" fx="1">
-          <stop offset="0%" stopColor="#FFD800" />
-          <stop offset="50%" stopColor="#FFD800" />
+          <stop offset="0%" stopColor="#87CEEB" />
+          <stop offset="50%" stopColor="#4169E1" />
           <stop offset="100%" stopColor="transparent" />
         </radialGradient>
         <radialGradient id="cpu-mobile-pinkish-grad" fx="1">
-          <stop offset="0%" stopColor="#830CD1" />
-          <stop offset="50%" stopColor="#FF008B" />
+          <stop offset="0%" stopColor="#87CEEB" />
+          <stop offset="50%" stopColor="#4169E1" />
           <stop offset="100%" stopColor="transparent" />
         </radialGradient>
         <radialGradient id="cpu-mobile-white-grad" fx="1">
-          <stop offset="0%" stopColor="white" />
+          <stop offset="0%" stopColor="#87CEEB" />
+          <stop offset="50%" stopColor="#4169E1" />
           <stop offset="100%" stopColor="transparent" />
         </radialGradient>
         <radialGradient id="cpu-mobile-green-grad" fx="1">
-          <stop offset="0%" stopColor="#22c55e" />
+          <stop offset="0%" stopColor="#87CEEB" />
+          <stop offset="50%" stopColor="#4169E1" />
           <stop offset="100%" stopColor="transparent" />
         </radialGradient>
         <radialGradient id="cpu-mobile-orange-grad" fx="1">
-          <stop offset="0%" stopColor="#f97316" />
+          <stop offset="0%" stopColor="#87CEEB" />
+          <stop offset="50%" stopColor="#4169E1" />
           <stop offset="100%" stopColor="transparent" />
         </radialGradient>
         <radialGradient id="cpu-mobile-cyan-grad" fx="1">
-          <stop offset="0%" stopColor="#06b6d4" />
+          <stop offset="0%" stopColor="#87CEEB" />
+          <stop offset="50%" stopColor="#4169E1" />
           <stop offset="100%" stopColor="transparent" />
         </radialGradient>
         <radialGradient id="cpu-mobile-rose-grad" fx="1">
-          <stop offset="0%" stopColor="#f43f5e" />
+          <stop offset="0%" stopColor="#87CEEB" />
+          <stop offset="50%" stopColor="#4169E1" />
           <stop offset="100%" stopColor="transparent" />
         </radialGradient>
         <filter
