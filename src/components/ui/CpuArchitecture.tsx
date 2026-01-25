@@ -304,46 +304,46 @@ const CpuArchitecture = ({
               stroke="white"
             />
           </mask>
-          {/* Gradients */}
+          {/* Gradients - All Blue for Desktop */}
           <radialGradient id="cpu-blue-grad" fx="1">
             <stop offset="0%" stopColor="#87CEEB" />
             <stop offset="50%" stopColor="#4169E1" />
-            <stop offset="100%" stopColor="#00008B" />
+            <stop offset="100%" stopColor="transparent" />
           </radialGradient>
           <radialGradient id="cpu-yellow-grad" fx="1">
             <stop offset="0%" stopColor="#87CEEB" />
             <stop offset="50%" stopColor="#4169E1" />
-            <stop offset="100%" stopColor="#00008B" />
+            <stop offset="100%" stopColor="transparent" />
           </radialGradient>
           <radialGradient id="cpu-pinkish-grad" fx="1">
             <stop offset="0%" stopColor="#87CEEB" />
             <stop offset="50%" stopColor="#4169E1" />
-            <stop offset="100%" stopColor="#00008B" />
+            <stop offset="100%" stopColor="transparent" />
           </radialGradient>
           <radialGradient id="cpu-white-grad" fx="1">
             <stop offset="0%" stopColor="#87CEEB" />
             <stop offset="50%" stopColor="#4169E1" />
-            <stop offset="100%" stopColor="#00008B" />
+            <stop offset="100%" stopColor="transparent" />
           </radialGradient>
           <radialGradient id="cpu-green-grad" fx="1">
             <stop offset="0%" stopColor="#87CEEB" />
             <stop offset="50%" stopColor="#4169E1" />
-            <stop offset="100%" stopColor="#00008B" />
+            <stop offset="100%" stopColor="transparent" />
           </radialGradient>
           <radialGradient id="cpu-orange-grad" fx="1">
             <stop offset="0%" stopColor="#87CEEB" />
             <stop offset="50%" stopColor="#4169E1" />
-            <stop offset="100%" stopColor="#00008B" />
+            <stop offset="100%" stopColor="transparent" />
           </radialGradient>
           <radialGradient id="cpu-cyan-grad" fx="1">
             <stop offset="0%" stopColor="#87CEEB" />
             <stop offset="50%" stopColor="#4169E1" />
-            <stop offset="100%" stopColor="#00008B" />
+            <stop offset="100%" stopColor="transparent" />
           </radialGradient>
           <radialGradient id="cpu-rose-grad" fx="1">
             <stop offset="0%" stopColor="#87CEEB" />
             <stop offset="50%" stopColor="#4169E1" />
-            <stop offset="100%" stopColor="#00008B" />
+            <stop offset="100%" stopColor="transparent" />
           </radialGradient>
           <filter
             id="cpu-light-shadow"
@@ -365,21 +365,20 @@ const CpuArchitecture = ({
             viewBox="0 0 10 10"
             refX="5"
             refY="5"
-            markerWidth="3"
-            markerHeight="3"
-            markerUnits="strokeWidth"
+            markerWidth={lineMarkerSize}
+            markerHeight={lineMarkerSize}
           >
             <circle
               id="innerMarkerCircle"
               cx="5"
               cy="5"
-              r="3"
-              fill="#1a1a1a"
-              stroke="#000000"
-              strokeWidth="0.8"
+              r="2"
+              fill="black"
+              stroke="#232323"
+              strokeWidth="0.5"
             >
               {animateMarkers && (
-                <animate attributeName="r" values="0; 3; 3" dur="0.5s" fill="freeze" />
+                <animate attributeName="r" values="0; 3; 2" dur="0.5s" />
               )}
             </circle>
           </marker>
