@@ -56,10 +56,10 @@ export default function BookingModal({ isOpen, onClose }: { isOpen: boolean; onC
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-2 sm:p-4 backdrop-blur-sm">
       <div
         className={`relative h-[85vh] w-full rounded-2xl bg-white shadow-2xl overflow-hidden transition-all duration-300 ease-in-out ${
-          isBookingFormView ? "max-w-4xl" : "max-w-6xl"
+          isBookingFormView ? "max-w-3xl" : "max-w-5xl"
         }`}
       >
         <button
@@ -72,7 +72,7 @@ export default function BookingModal({ isOpen, onClose }: { isOpen: boolean; onC
         <Cal
           namespace="erstgesprach"
           calLink="aitomaticly/erstgesprach"
-          style={{ width: "100%", height: "100%", overflow: "auto" }}
+          style={{ width: "100%", height: "100%" }}
           config={{ layout: "month_view", useSlotsViewOnSmallScreen: "true", theme: "light" }}
         />
       </div>
