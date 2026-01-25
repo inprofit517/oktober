@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+import { getCalApi } from "@calcom/embed-react";
 import { Bot, Zap, Cpu, Network, Calendar, Home } from "lucide-react";
-import BookingModal from "./BookingModal";
 
 const StaticGradientBackground: React.FC = () => {
   return (
@@ -115,10 +115,22 @@ interface ContactFormProps {
 }
 
 const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
+
+    (async function () {
+      const cal = await getCalApi({ namespace: "erstgesprach" });
+      cal("ui", {
+        theme: "light",
+        cssVarsPerTheme: {
+          light: {
+            "cal-brand": "#00b1ff"
+          }
+        },
+        hideEventTypeDetails: false,
+        layout: "month_view"
+      });
+    })();
   }, []);
 
   const handleReturnHome = () => {
@@ -203,7 +215,9 @@ const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => setIsModalOpen(true)}
+                data-cal-namespace="erstgesprach"
+                data-cal-link="aitomaticly/erstgesprach"
+                data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"}'
                 className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold rounded-xl shadow-2xl transition-all duration-300 flex items-center space-x-3"
               >
                 <Calendar className="w-6 h-6" />
@@ -244,9 +258,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
           </div>
         </div>
       </div>
-
-      {/* Booking Modal */}
-      <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 };
