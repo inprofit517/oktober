@@ -120,11 +120,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
     if (typeof window !== 'undefined' && (window as any).Cal) {
       (window as any).Cal.ns.erstgesprach("inline", {
         elementOrSelector:"#my-cal-inline-erstgesprach",
-        config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"},
+        config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light","locale":"de"},
         calLink: "aitomaticly/erstgesprach",
       });
 
-      (window as any).Cal.ns.erstgesprach("ui", {"theme":"light","hideEventTypeDetails":false,"layout":"month_view"});
+      (window as any).Cal.ns.erstgesprach("ui", {"theme":"light","hideEventTypeDetails":false,"layout":"month_view","locale":"de"});
     }
   }, []);
 
@@ -179,7 +179,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="mb-6"
+                className="mb-6 hidden md:block"
               >
                 <span className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 text-sm font-medium backdrop-blur-sm">
                   <Calendar className="w-4 h-4 mr-2" />
@@ -188,7 +188,9 @@ const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
               </motion.div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight">
-                Buchen Sie Ihr kostenloses
+                Buchen Sie
+                <br />
+                Ihr kostenloses
                 <br />
                 <span className="bg-gradient-to-r from-white via-blue-200 to-blue-300 bg-clip-text text-transparent">
                   Erstgespräch

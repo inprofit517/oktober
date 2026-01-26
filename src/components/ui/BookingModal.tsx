@@ -16,7 +16,8 @@ export default function BookingModal({ isOpen, onClose }: { isOpen: boolean; onC
           }
         },
         hideEventTypeDetails: false,
-        layout: "month_view"
+        layout: "month_view",
+        locale: "de"
       });
 
       // Listen for route changes in Cal.com embed
@@ -73,7 +74,7 @@ export default function BookingModal({ isOpen, onClose }: { isOpen: boolean; onC
           namespace="erstgesprach"
           calLink="aitomaticly/erstgesprach"
           style={{ width: "100%", height: "100%" }}
-          config={{ layout: "month_view", useSlotsViewOnSmallScreen: "true", theme: "light" }}
+          config={{ layout: "month_view", useSlotsViewOnSmallScreen: "true", theme: "light", locale: "de" }}
         />
       </div>
     </div>
