@@ -85,18 +85,18 @@ const AnimatedText = () => {
 const TeamSection = () => {
   const teamMembers = [
     {
-      name: "Lis",
-      role: "Gründer",
-      description: "Führt unsere Vision und Strategie und arbeitet eng mit Kunden zusammen, um intelligente Automatisierungssysteme zu planen, die messbare Ergebnisse liefern.",
-      icon: Sparkles,
-      color: "from-blue-500 to-indigo-500"
-    },
-    {
       name: "Elia",
-      role: "Kundenmanager",
-      description: "Verwaltet das Kunden-Onboarding und den laufenden Support und stellt sicher, dass jede Automatisierungslösung perfekt zu Ihren Zielen und Bedürfnissen passt.",
+      role: "Projektleitung",
+      description: "Analysiert Ihre Unternehmensprozesse, um die passenden Lösungen zu identifizieren. Elia stellt sicher, dass unsere Technologie exakt auf Ihre strategischen Ziele einzahlt.",
       icon: Users,
       color: "from-blue-400 to-blue-600"
+    },
+    {
+      name: "Lis",
+      role: "Automation Engineer",
+      description: "Verantwortlich für die technische Architektur und System-Integration. Lis übersetzt Ihre geschäftlichen Anforderungen in effizienten, fehlerfreien Code und automatisierte Workflows.",
+      icon: Sparkles,
+      color: "from-blue-500 to-indigo-500"
     }
   ];
 
@@ -130,7 +130,7 @@ const TeamSection = () => {
         </motion.div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
@@ -142,22 +142,22 @@ const TeamSection = () => {
               className="group h-full"
             >
               <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-200 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] h-full flex flex-col overflow-hidden border border-white/50">
-                
+
                 {/* Profile Picture Placeholder */}
-                <div className="p-6 text-center bg-gradient-to-br from-white to-blue-50/50">
-                  <div className="w-24 h-24 mx-auto rounded-full bg-gray-200 border-4 border-white shadow-lg mb-4 flex items-center justify-center overflow-hidden">
+                <div className="p-8 text-center bg-gradient-to-br from-white to-blue-50/50">
+                  <div className="w-32 h-32 mx-auto rounded-full bg-gray-200 border-4 border-white shadow-lg mb-5 flex items-center justify-center overflow-hidden">
                     <div className="text-gray-400 text-xs">Photo</div>
                   </div>
-                  
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                  <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+
+                  <h3 className="text-3xl font-bold text-gray-900 mb-3">{member.name}</h3>
+                  <span className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">
                     {member.role}
                   </span>
                 </div>
 
                 {/* Description */}
-                <div className="p-6 flex-1 flex items-center">
-                  <p className="text-gray-600 leading-relaxed text-center">{member.description}</p>
+                <div className="p-8 flex-1 flex items-center">
+                  <p className="text-gray-700 leading-loose text-center text-base">{member.description}</p>
                 </div>
               </div>
             </motion.div>
