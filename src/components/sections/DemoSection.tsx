@@ -123,85 +123,8 @@ export const DemoSection: React.FC = () => {
         </div>
       </div>
       
-      <div className="relative max-w-7xl mx-auto">
-        <div className={`text-center mb-16 transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
-          <h2 className="font-bold mb-6 text-white">
-            <span className="hidden md:block text-[clamp(2rem,4vw,3.5rem)] leading-tight">
-              Dürfen wir vorstellen?<br />Ihr Support-Team, das nie schläft.
-            </span>
-            <span className="md:hidden text-3xl leading-tight">
-              Dürfen wir vorstellen?<br />Ihr Support-Team,<br />das nie schläft.
-            </span>
-          </h2>
-        </div>
 
-        <div className="flex justify-center mb-12">
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl w-full px-4 md:px-0">
-          {demos.map((demo, index) => (
-            <Card
-              key={demo.title}
-              className={`relative bg-white/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 hover:border-transparent group w-[90%] mx-auto md:w-full md:mx-0 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-              style={{ transitionDelay: `${index * 200 + 600}ms` }}
-            >
-              <div className="p-6">
-                <h3 className="font-semibold text-xl text-gray-900 mb-3 flex items-center gap-3">
-                  <div className="w-8 h-8 flex-shrink-0">
-                    {demo.icon}
-                  </div>
-                  {demo.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                  {demo.description}
-                </p>
-                
-                <ul className="space-y-2 mb-6">
-                  {demo.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-sm text-gray-600">
-                      <div className="w-1.5 h-1.5 bg-gradient-to-r from-blue-300 to-blue-900 rounded-full mr-3 flex-shrink-0"></div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                
-                <div className="text-center">
-                  <Button className="w-full bg-gradient-to-r from-blue-300 to-blue-900 hover:from-blue-400 hover:to-blue-950 text-white font-medium px-6 py-3 rounded-lg transition-all duration-300">
-                    Jetzt Ausprobieren
-                  </Button>
-                </div>
-              </div>
-            </Card>
-          ))}
-          </div>
-        </div>
 
-        <div className="w-full">
-          <Card className={`relative bg-white/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 hover:border-transparent group ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`} style={{ transitionDelay: '1200ms' }}>
-            <div className="p-6">
-              <div className="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
-                <div className="flex-1">
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
-                    Bereit, Ihr Unternehmen zu transformieren?
-                  </h3>
-                  <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                    Sehen Sie, wie unsere KI-Agenten Ihre Abläufe revolutionieren können. Erhalten Sie eine personalisierte Demo, die auf Ihre geschäftlichen Anforderungen zugeschnitten ist.
-                  </p>
-                </div>
-                <div className="flex-shrink-0">
-                  <Button className="w-full md:w-auto bg-gradient-to-r from-blue-300 to-blue-900 hover:from-blue-400 hover:to-blue-950 text-white font-medium px-8 py-3 rounded-lg transition-all duration-300">
-                    Holen Sie sich Ihre kostenlose Demo
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </Card>
-        </div>
-      </div>
     </section>
   );
 };

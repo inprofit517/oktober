@@ -92,25 +92,11 @@ const TeamSection = () => {
       color: "from-blue-500 to-indigo-500"
     },
     {
-      name: "Robin",
-      role: "Automatisierungsingenieur",
-      description: "Entwickelt und pflegt KI-Workflows, die manuelle Aufgaben eliminieren und die Geschäftseffizienz in allen Bereichen erheblich verbessern.",
-      icon: Brain,
-      color: "from-blue-600 to-cyan-500"
-    },
-    {
       name: "Elia",
       role: "Kundenmanager",
       description: "Verwaltet das Kunden-Onboarding und den laufenden Support und stellt sicher, dass jede Automatisierungslösung perfekt zu Ihren Zielen und Bedürfnissen passt.",
       icon: Users,
       color: "from-blue-400 to-blue-600"
-    },
-    {
-      name: "Robert",
-      role: "Integrationsspezialist",
-      description: "Verbindet nahtlos verschiedene Tools und Plattformen, um sicherzustellen, dass Ihre Automatisierungen reibungslos laufen und vollständig synchronisiert bleiben.",
-      icon: Rocket,
-      color: "from-blue-500 to-cyan-500"
     }
   ];
 
@@ -139,11 +125,8 @@ const TeamSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight">
-            Die Köpfe hinter Ihrem<br /><AnimatedText />
+            Das Team<br />hinter Ihrem<br />Erfolg
           </h2>
-          <p className="text-xl text-blue-200 max-w-3xl mx-auto font-light">
-            Lernen Sie die engagierten Profis kennen, die Automatisierung für Ihr Unternehmen einfach, effektiv und transformativ machen.
-          </p>
         </motion.div>
 
         {/* Team Grid */}

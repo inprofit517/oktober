@@ -29,7 +29,7 @@ export const ProcessSection: React.FC = () => {
       features: [
         "Workflow-Analyse",
         "Identifikation von Schwachstellen",
-        "Maßgeschneiderte Automatisierungsstrategie",
+        "Individuelle Strategie",
         "ROI-Bewertung & Planung"
       ]
     },
