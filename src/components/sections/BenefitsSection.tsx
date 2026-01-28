@@ -87,16 +87,16 @@ const TaskDashboard: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
         let newTodayCount = todayCount
         const newTasks = prev.map(task => {
           if (task.status === "processing" && task.progress < 100) {
-            // Increase animation speed by 50% for Email Campaign and Support Ticket
-            const speedMultiplier = (task.name === "Email Campaign" || task.name === "Support Ticket") ? 1.5 : 1
+            // Increase animation speed by 50% for E-Mail-Kampagne and Support-Ticket
+            const speedMultiplier = (task.name === "E-Mail-Kampagne" || task.name === "Support-Ticket") ? 1.5 : 1
             const newProgress = Math.min(task.progress + Math.random() * 15 * speedMultiplier, 100)
             const newStatus = newProgress >= 100 ? "completed" : "processing"
-            
+
             if (task.status === "processing" && newStatus === "completed") {
               newCompletedCount += 1
               newTodayCount += 1
             }
-            
+
             return {
               ...task,
               progress: newProgress,
@@ -108,14 +108,14 @@ const TaskDashboard: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
           }
           return task
         })
-        
+
         setCompletedCount(newCompletedCount)
         setTodayCount(newTodayCount)
-        
-        // Check if both Email Campaign and Support Ticket are completed
-        const emailCampaign = newTasks.find(task => task.name === "Email Campaign")
-        const supportTicket = newTasks.find(task => task.name === "Support Ticket")
-        
+
+        // Check if both E-Mail-Kampagne and Support-Ticket are completed
+        const emailCampaign = newTasks.find(task => task.name === "E-Mail-Kampagne")
+        const supportTicket = newTasks.find(task => task.name === "Support-Ticket")
+
         if (emailCampaign?.status === "completed" && supportTicket?.status === "completed") {
           setSuccessRate(100)
         }
@@ -243,7 +243,7 @@ const CostDashboard: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
         <div className="bg-gray-50 rounded-lg p-2 sm:p-3 md:p-4 border border-gray-200">
           <div className="text-xs md:text-sm lg:text-xs text-gray-600 mb-0.5 sm:mb-1 md:mb-2">Monatliche Ersparnisse</div>
           <div className="text-base sm:text-lg md:text-2xl lg:text-xl font-bold text-green-600">
-            <AnimatedCounter end={28} prefix="$" suffix="k" />
+            <AnimatedCounter end={28} suffix="'000 CHF" />
           </div>
           <div className="text-xs md:text-sm lg:text-xs text-green-600 truncate">pro Monat</div>
         </div>
@@ -252,46 +252,40 @@ const CostDashboard: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
       {/* Visual Cost Trend - Mobile optimized */}
       <div className="flex-grow flex flex-col">
         <div className="text-xs md:text-sm lg:text-xs text-gray-600 mb-1 sm:mb-2 md:mb-3">Betriebskosten im Laufe der Zeit</div>
-        <div className="relative bg-gray-50 rounded-lg border border-gray-200 p-2 sm:p-3 md:p-4 flex-grow min-h-[120px] sm:min-h-[140px] md:min-h-[180px] lg:min-h-[160px]">
-          <svg className="w-full h-full" viewBox="0 0 280 80" preserveAspectRatio="xMidYMid meet">
+        <div className="relative bg-gray-50 rounded-lg border border-gray-200 overflow-hidden flex-grow min-h-[120px] sm:min-h-[140px] md:min-h-[180px] lg:min-h-[160px]">
+          <svg className="w-full h-full" viewBox="0 0 280 80" preserveAspectRatio="none">
             <defs>
               <linearGradient id="costGradient" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" stopColor="#dc2626" stopOpacity="0.8" />
                 <stop offset="100%" stopColor="#dc2626" stopOpacity="0.2" />
               </linearGradient>
-              <pattern id="grid" width="40" height="16" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 16" fill="none" stroke="#e5e7eb" strokeWidth="0.5"/>
-              </pattern>
             </defs>
-            
-            {/* Subtle grid lines */}
-            <rect width="100%" height="100%" fill="url(#grid)" opacity="0.2" />
-            
-            {/* Fill area - responsive */}
+
+            {/* Fill area - Edge to Edge */}
             <polygon
               fill="url(#costGradient)"
-              points={`20,80 ${chartData.map((point, index) => 
-                `${20 + (index / (chartData.length - 1)) * 240},${80 - (point.cost * 0.6)}`
-              ).join(' ')} 260,80`}
+              points={`0,80 ${chartData.map((point, index) =>
+                `${(index / (chartData.length - 1)) * 280},${80 - (point.cost * 0.6)}`
+              ).join(' ')} 280,80`}
               className={`transition-all duration-2000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
             />
-            
-            {/* Cost reduction line - thinner for mobile */}
+
+            {/* Cost reduction line */}
             <polyline
               fill="none"
               stroke="#dc2626"
               strokeWidth="2"
-              points={chartData.map((point, index) => 
-                `${20 + (index / (chartData.length - 1)) * 240},${80 - (point.cost * 0.6)}`
+              points={chartData.map((point, index) =>
+                `${(index / (chartData.length - 1)) * 280},${80 - (point.cost * 0.6)}`
               ).join(' ')}
               className={`transition-all duration-2000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
             />
-            
-            {/* Data points - smaller for mobile */}
+
+            {/* Data points */}
             {chartData.map((point, index) => (
               <circle
                 key={index}
-                cx={20 + (index / (chartData.length - 1)) * 240}
+                cx={(index / (chartData.length - 1)) * 280}
                 cy={80 - (point.cost * 0.6)}
                 r="3"
                 fill="#dc2626"
@@ -302,13 +296,6 @@ const CostDashboard: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
               />
             ))}
           </svg>
-        </div>
-        
-        {/* Month labels - compact for mobile */}
-        <div className="hidden sm:flex justify-between text-xs md:text-sm lg:text-xs text-gray-400 mt-1 md:mt-2 px-1 md:px-2">
-          {chartData.map(point => (
-            <span key={point.month} className="text-center text-xs md:text-sm lg:text-xs">{point.month}</span>
-          ))}
         </div>
       </div>
 
@@ -380,33 +367,33 @@ const CompetitionDashboard: React.FC<{ isVisible: boolean }> = ({ isVisible }) =
               <div key={comp.name} className="space-y-1 sm:space-y-2 md:space-y-3 lg:space-y-3">
                 <div className="flex justify-between items-center">
                   <span className={`text-xs sm:text-sm md:text-base lg:text-sm font-semibold truncate flex-1 mr-2 ${
-                    comp.name.includes("Your") ? "text-green-600" : "text-gray-600"
+                    comp.name === "Ihr Unternehmen" ? "text-green-600" : "text-gray-600"
                   }`}>
                     {comp.name}
                   </span>
                   <span className={`text-xs sm:text-sm md:text-base lg:text-sm font-bold flex-shrink-0 ${
-                    comp.name.includes("Your") ? "text-green-600" : "text-gray-600"
+                    comp.name === "Ihr Unternehmen" ? "text-green-600" : "text-gray-600"
                   }`}>
                     {comp.score}%
                   </span>
                 </div>
                 <div className="relative w-full bg-gray-200 rounded-full h-2 sm:h-2.5 md:h-3 lg:h-3">
-                  <div 
+                  <div
                     className={"h-2 sm:h-2.5 md:h-3 lg:h-3 rounded-full transition-all duration-1000 " + (
-                      comp.name.includes("Your") 
+                      comp.name === "Ihr Unternehmen"
                         ? "bg-green-500"
                         : "bg-gray-400"
                     )}
-                    style={{ 
+                    style={{
                       width: isVisible ? `${comp.score}%` : '0%',
                       transitionDelay: `${index * 300}ms`
                     }}
                   >
-                    {comp.name.includes("Your") && (
+                    {comp.name === "Ihr Unternehmen" && (
                       <div className="absolute inset-0 bg-gradient-to-r from-green-500/40 to-green-600/40 rounded-full animate-pulse"></div>
                     )}
                   </div>
-                  {comp.name.includes("Your") && (
+                  {comp.name === "Ihr Unternehmen" && (
                     <div className="absolute -top-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-6 lg:h-6 bg-green-500 rounded-full border-2 border-white">
                     </div>
                   )}
