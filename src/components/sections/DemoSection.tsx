@@ -123,7 +123,7 @@ export const DemoSection: React.FC = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight">
@@ -135,7 +135,7 @@ export const DemoSection: React.FC = () => {
         </div>
 
         {/* Demo Cards - Centered */}
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 justify-center items-start">
           {demos.map((demo, index) => (
             <Card
               key={index}
