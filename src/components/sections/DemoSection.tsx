@@ -122,8 +122,68 @@ export const DemoSection: React.FC = () => {
           <div className="absolute left-0 top-1/3 w-full h-px bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
         </div>
       </div>
-      
 
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight">
+            Unsere KI-Lösungen
+          </h2>
+          <p className="text-xl text-white/90 max-w-3xl mx-auto">
+            Entdecken Sie, wie unsere intelligenten Agenten Ihr Geschäft transformieren können
+          </p>
+        </div>
+
+        {/* Demo Cards - Centered */}
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          {demos.map((demo, index) => (
+            <Card
+              key={index}
+              className={`p-8 bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-white/50 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}
+              style={{
+                transitionDelay: `${index * 150}ms`
+              }}
+            >
+              {/* Icon */}
+              <div className="w-20 h-20 mx-auto mb-6">
+                {demo.icon}
+              </div>
+
+              {/* Title */}
+              <h3 className="text-3xl font-bold text-gray-900 mb-4 text-center">
+                {demo.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-gray-700 leading-loose mb-6 text-center text-base">
+                {demo.description}
+              </p>
+
+              {/* Features List */}
+              <ul className="space-y-3">
+                {demo.features.map((feature, featureIndex) => (
+                  <li key={featureIndex} className="flex items-start">
+                    <svg
+                      className="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <span className="text-gray-700">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </Card>
+          ))}
+        </div>
+      </div>
 
     </section>
   );
