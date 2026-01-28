@@ -13,40 +13,40 @@ interface AIAgent {
   color: string;
 }
 
+const agents: AIAgent[] = [
+  {
+    id: "support",
+    name: "Support Chatbot",
+    description: "Intelligenter KI-Assistent, der 24/7 Kundensupport mit natürlicher Sprachverarbeitung und kontextabhängigen Antworten bereitstellt.",
+    icon: MessageCircle,
+    features: [
+      "Natürliche Sprachverarbeitung",
+      "Mehrsprachige Unterstützung",
+      "Sentimentanalyse",
+      "Eskalation an menschliche Mitarbeiter"
+    ],
+    demoUrl: "#demo-support",
+    color: "from-blue-500 to-cyan-500"
+  },
+  {
+    id: "voice",
+    name: "Voice Agent",
+    description: "Fortgeschrittene Voice-KI, die Telefonanrufe mit menschenähnlichen Gesprächsfähigkeiten und Echtzeit-Antwortgenerierung verarbeitet.",
+    icon: Bot,
+    features: [
+      "Natürliche Sprachsynthese",
+      "Echtzeit-Gespräch",
+      "Anrufweiterleitung und -übertragung",
+      "Sprachanalysen"
+    ],
+    demoUrl: "#demo-voice",
+    color: "from-cyan-500 to-blue-500"
+  }
+];
+
 const AIAgentDemo: React.FC = () => {
   const [activeAgent, setActiveAgent] = useState<string | null>(null);
   const agentRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  const agents: AIAgent[] = [
-    {
-      id: "support",
-      name: "Support Chatbot",
-      description: "Intelligenter KI-Assistent, der 24/7 Kundensupport mit natürlicher Sprachverarbeitung und kontextabhängigen Antworten bereitstellt.",
-      icon: MessageCircle,
-      features: [
-        "Natürliche Sprachverarbeitung",
-        "Mehrsprachige Unterstützung",
-        "Sentimentanalyse",
-        "Eskalation an menschliche Mitarbeiter"
-      ],
-      demoUrl: "#demo-support",
-      color: "from-blue-500 to-cyan-500"
-    },
-    {
-      id: "voice",
-      name: "Voice Agent",
-      description: "Fortgeschrittene Voice-KI, die Telefonanrufe mit menschenähnlichen Gesprächsfähigkeiten und Echtzeit-Antwortgenerierung verarbeitet.",
-      icon: Bot,
-      features: [
-        "Natürliche Sprachsynthese",
-        "Echtzeit-Gespräch",
-        "Anrufweiterleitung und -übertragung",
-        "Sprachanalysen"
-      ],
-      demoUrl: "#demo-voice",
-      color: "from-cyan-500 to-blue-500"
-    }
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -78,7 +78,7 @@ const AIAgentDemo: React.FC = () => {
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // Call once on mount to set initial active agent
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [agents]);
+  }, []);
 
   const handleDemoClick = (demoUrl: string) => {
     // Trigger contact form
