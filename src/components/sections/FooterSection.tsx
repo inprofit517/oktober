@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 
 export const FooterSection: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -45,36 +45,30 @@ export const FooterSection: React.FC = () => {
       
       <div className="relative max-w-7xl mx-auto">
         {/* Main Footer Content */}
-        <div className="flex justify-center mb-12">
-          {/* Company Info */}
-          <div className={`max-w-xl transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
-            <div className="mb-6 text-center">
-              <h3 className="text-3xl font-bold mb-4">
-                <span className="bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent">
-                  AITOMATICLY
-                </span>
-              </h3>
-              <p className="text-gray-300 text-sm leading-relaxed">
-                Wir transformieren Unternehmen mit modernsten KI-Automatisierungslösungen. Wir helfen Firmen, ihre Abläufe zu optimieren, die Effizienz zu steigern und grenzenlos zu skalieren.
-              </p>
-            </div>
+        <div className={`flex flex-col md:flex-row justify-between items-start mb-12 gap-8 transition-all duration-1000 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
+          {/* Left: Company Info */}
+          <div className="max-w-xl">
+            <h3 className="text-3xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent">
+                AITOMATICLY
+              </span>
+            </h3>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Wir transformieren Unternehmen mit modernsten KI-Automatisierungslösungen. Wir helfen Firmen, ihre Abläufe zu optimieren, die Effizienz zu steigern und grenzenlos zu skalieren.
+            </p>
+          </div>
 
-            {/* Contact Info */}
-            <div className="space-y-3">
-              <div className="flex items-center justify-center gap-3 text-gray-300">
-                <Mail className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                <span className="text-sm">info@aitomaticly.com</span>
-              </div>
-              <div className="flex items-center justify-center gap-3 text-gray-300">
-                <Phone className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                <span className="text-sm">+1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-center justify-center gap-3 text-gray-300">
-                <MapPin className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                <span className="text-sm">Bern, Schweiz</span>
-              </div>
+          {/* Right: Contact Info */}
+          <div className="space-y-3 md:text-right">
+            <div className="flex items-center gap-3 text-gray-300">
+              <Mail className="w-4 h-4 text-blue-400 flex-shrink-0" />
+              <span className="text-sm">info@aitomaticly.com</span>
+            </div>
+            <div className="flex items-center gap-3 text-gray-300">
+              <MapPin className="w-4 h-4 text-blue-400 flex-shrink-0" />
+              <span className="text-sm">Bern, Schweiz</span>
             </div>
           </div>
         </div>

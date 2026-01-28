@@ -162,7 +162,7 @@ const AIAgentDemo: React.FC = () => {
               <span className="block md:hidden">Dürfen wir vorstellen?</span>
               <span className="block md:hidden">Ihr Support-Team,</span>
               <span className="block md:hidden">das nie schläft.</span>
-              <span className="hidden md:block">Dürfen wir vorstellen? Ihr Support-Team, das nie schläft.</span>
+              <span className="hidden md:block">Dürfen wir vorstellen?<br />Ihr Support-Team, das nie schläft.</span>
             </h2>
           </motion.div>
 
