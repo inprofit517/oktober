@@ -127,30 +127,22 @@ export const DemoSection: React.FC = () => {
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Erleben Sie die Kraft der
-            <br />
-            <span className="bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-              KI-Automatisierung
+          <h2 className="font-bold mb-6 text-white">
+            <span className="hidden md:block text-[clamp(2rem,4vw,3.5rem)] leading-tight">
+              Dürfen wir vorstellen?<br />Ihr Support-Team, das nie schläft.
+            </span>
+            <span className="md:hidden text-3xl leading-tight">
+              Dürfen wir vorstellen?<br />Ihr Support-Team,<br />das nie schläft.
             </span>
           </h2>
-          <p className="text-lg text-white/90 max-w-4xl mx-auto leading-relaxed">
-            <span className="hidden md:block">
-              Sehen Sie unsere KI-Agenten in Aktion. Jede Demo zeigt Echtzeit-Fähigkeiten, die
-              <br />
-              die Art und Weise verändern, wie Unternehmen tätig sind, kommunizieren und wachsen.
-            </span>
-            <span className="md:hidden">
-              Sehen Sie unsere KI-Agenten in Aktion. Jede Demo zeigt Echtzeit-Fähigkeiten, die die Art und Weise verändern, wie Unternehmen tätig sind, kommunizieren und wachsen.
-            </span>
-          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="flex justify-center mb-12">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl w-full px-4 md:px-0">
           {demos.map((demo, index) => (
-            <Card 
+            <Card
               key={demo.title}
-              className={`relative bg-white/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 hover:border-transparent group ${
+              className={`relative bg-white/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 hover:border-transparent group w-[90%] mx-auto md:w-full md:mx-0 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: `${index * 200 + 600}ms` }}
@@ -183,6 +175,7 @@ export const DemoSection: React.FC = () => {
               </div>
             </Card>
           ))}
+          </div>
         </div>
 
         <div className="w-full">

@@ -118,29 +118,9 @@ export const ProcessSection: React.FC = () => {
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <h2 className="text-5xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight">
-            <span className="hidden md:block">
-              <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-900 bg-clip-text text-transparent">Automatisieren Sie</span>
-              <span className="text-gray-900"> Ihre Arbeitsabläufe</span>
-              <br />
-              <span className="text-gray-900">in drei klaren Schritten</span>
-            </span>
-            <span className="md:hidden">
-              Automatisieren<br />in drei Schritten
-            </span>
+          <h2 className="font-bold mb-6 text-gray-900 leading-tight text-[clamp(2rem,4vw,3.5rem)]">
+            Automatisieren Sie<br />Ihre Arbeitsabläufe<br />in drei klaren Schritten
           </h2>
-          <p className="text-lg text-gray-600 max-w-xl md:max-w-4xl mx-auto leading-relaxed" style={{ lineHeight: '1.4' }}>
-            <span className="hidden md:block">
-              Von der Analyse bis zur Optimierung, unser strukturierter Ansatz sorgt für
-              <br />
-              eine erfolgreiche KI-Automatisierung in Ihrem Unternehmen.
-            </span>
-            <span className="md:hidden">
-              Von der Analyse bis zur Optimierung, unser
-              <br />
-              strukturierter Ansatz sorgt für Erfolg.
-            </span>
-          </p>
         </div>
 
         {/* Compact Timeline with Picture Space */}
@@ -185,14 +165,14 @@ export const ProcessSection: React.FC = () => {
                       </div>
                       
                       {/* Compact Features */}
-                      <div className="flex flex-wrap gap-3">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         {process.features.map((feature, featureIndex) => (
-                          <span 
-                            key={featureIndex} 
-                            className="inline-flex items-center px-3 py-1.5 bg-blue-50 text-blue-700 text-sm rounded-md border border-blue-100"
+                          <span
+                            key={featureIndex}
+                            className="inline-flex items-center px-3 py-1.5 bg-blue-50 text-blue-700 text-sm rounded-md border border-blue-100 break-words"
                           >
-                            <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
-                            {feature}
+                            <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 flex-shrink-0"></div>
+                            <span className="break-words">{feature}</span>
                           </span>
                         ))}
                       </div>
