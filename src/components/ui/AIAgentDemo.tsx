@@ -158,19 +158,16 @@ const AIAgentDemo: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-5xl md:text-5xl font-bold text-white mb-6">
-              <span className="block md:inline">Erleben Sie die Kraft der</span>{' '}
-              <span className="block md:inline">KI-Automatisierung</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <span className="block md:hidden">Dürfen wir vorstellen?</span>
+              <span className="block md:hidden">Ihr Support-Team,</span>
+              <span className="block md:hidden">das nie schläft.</span>
+              <span className="hidden md:block">Dürfen wir vorstellen? Ihr Support-Team, das nie schläft.</span>
             </h2>
-            <p className="text-lg md:text-xl text-blue-200 max-w-3xl mx-auto">
-              <span className="block md:inline">Sehen Sie unsere KI-Agenten in Aktion</span>{' '}
-              <span className="block md:inline">mit Echtzeit-Fähigkeiten<span className="md:hidden">.</span></span>
-              <span className="hidden md:block">die die Art und Weise verändern, wie Unternehmen tätig sind, kommunizieren und wachsen.</span>
-            </p>
           </motion.div>
 
           {/* Agent cards grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto px-4 md:px-0">
             {agents.map((agent, index) => (
               <motion.div
                 key={agent.id}
