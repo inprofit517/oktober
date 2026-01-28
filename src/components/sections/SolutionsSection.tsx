@@ -2,6 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Users, Target, Headphones, Mic } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Card } from '../ui/card';
+import crmImage from '../../CRM.png';
+import leadgenImage from '../../leadgen.png';
+import supportImage from '../../support.png';
+import voiceImage from '../../voice agent.png';
 
 interface Solution {
   id: string;
@@ -29,7 +33,7 @@ const solutionsData: Solution[] = [
         <path fill="url(#crmGradient)" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
       </svg>
     ),
-    image: "src/CRM.png"
+    image: crmImage
   },
   {
     id: "lead-gen",
@@ -47,7 +51,7 @@ const solutionsData: Solution[] = [
         <path fill="url(#leadGradient)" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
       </svg>
     ),
-    image: "src/leadgen.png"
+    image: leadgenImage
   },
   {
     id: "support",
@@ -65,7 +69,7 @@ const solutionsData: Solution[] = [
         <path fill="url(#supportGradient)" d="M12 3c5.514 0 10 3.685 10 8.23 0 4.544-4.486 8.229-10 8.229-1.691 0-3.289-.347-4.725-.974L2 21l2.725-5.256C3.347 14.519 2 12.875 2 11.23 2 6.685 6.486 3 12 3zm-3 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm3 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm3 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
       </svg>
     ),
-    image: "src/support.png"
+    image: supportImage
   },
   {
     id: "voice",
@@ -83,7 +87,7 @@ const solutionsData: Solution[] = [
         <path fill="url(#voiceGradient2)" d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z M17.3 11c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.49 6-3.31 6-6.72h-1.7z"/>
       </svg>
     ),
-    image: "src/voice agent.png"
+    image: voiceImage
   }
 ];
 
