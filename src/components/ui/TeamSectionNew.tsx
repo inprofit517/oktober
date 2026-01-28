@@ -54,7 +54,7 @@ const SparklingBubbles = () => {
 
 // Animated Text Component
 const AnimatedText = () => {
-  const words = ["Success", "Future", "Innovation"];
+  const words = ["Erfolg", "Zukunft", "Innovation"];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -86,29 +86,29 @@ const TeamSection = () => {
   const teamMembers = [
     {
       name: "Lis",
-      role: "Founder",
-      description: "Leads our vision and strategy while working closely with clients to plan smart automation systems that deliver measurable results.",
+      role: "Gründer",
+      description: "Führt unsere Vision und Strategie und arbeitet eng mit Kunden zusammen, um intelligente Automatisierungssysteme zu planen, die messbare Ergebnisse liefern.",
       icon: Sparkles,
       color: "from-blue-500 to-indigo-500"
     },
     {
       name: "Robin",
-      role: "Automation Engineer",
-      description: "Designs and maintains AI workflows that eliminate manual tasks and significantly improve business efficiency across operations.",
+      role: "Automatisierungsingenieur",
+      description: "Entwickelt und pflegt KI-Workflows, die manuelle Aufgaben eliminieren und die Geschäftseffizienz in allen Bereichen erheblich verbessern.",
       icon: Brain,
       color: "from-blue-600 to-cyan-500"
     },
     {
       name: "Elia",
-      role: "Client Manager",
-      description: "Manages client onboarding and ongoing support while ensuring every automation solution perfectly meets your goals and needs.",
+      role: "Kundenmanager",
+      description: "Verwaltet das Kunden-Onboarding und den laufenden Support und stellt sicher, dass jede Automatisierungslösung perfekt zu Ihren Zielen und Bedürfnissen passt.",
       icon: Users,
       color: "from-blue-400 to-blue-600"
     },
     {
       name: "Robert",
-      role: "Integration Specialist",
-      description: "Seamlessly connects various tools and platforms to ensure your automations run smoothly and stay fully synchronized.",
+      role: "Integrationsspezialist",
+      description: "Verbindet nahtlos verschiedene Tools und Plattformen, um sicherzustellen, dass Ihre Automatisierungen reibungslos laufen und vollständig synchronisiert bleiben.",
       icon: Rocket,
       color: "from-blue-500 to-cyan-500"
     }
@@ -139,10 +139,10 @@ const TeamSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight">
-            The Minds Behind Your<br /><AnimatedText />
+            Die Köpfe hinter Ihrem<br /><AnimatedText />
           </h2>
           <p className="text-xl text-blue-200 max-w-3xl mx-auto font-light">
-            Meet the dedicated professionals who make automation simple, effective, and transformative for your business.
+            Lernen Sie die engagierten Profis kennen, die Automatisierung für Ihr Unternehmen einfach, effektiv und transformativ machen.
           </p>
         </motion.div>
 
@@ -197,7 +197,7 @@ const TeamSection = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-cyan-400/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl blur-sm" />
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/30 via-cyan-400/30 to-blue-500/30 opacity-0 group-hover:opacity-50 transition-opacity duration-300 rounded-xl blur-xl -z-10" />
             
-            <span className="relative z-10">Contact Our Team</span>
+            <span className="relative z-10">Kontaktieren Sie unser Team</span>
             <Users className="mr-2 h-5 w-5" />
           </Button>
         </motion.div>
