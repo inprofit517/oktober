@@ -5,7 +5,7 @@ import { Card } from '../ui/card';
 import crmImage from '../../CRM.png';
 import leadgenImage from '../../leadgen.png';
 import supportImage from '../../support.png';
-import voiceImage from '../../voice agent.png';
+import voiceImage from '../../voice-agent.png';
 
 interface Solution {
   id: string;

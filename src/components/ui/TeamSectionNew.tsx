@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../../lib/utils';
 import { Button } from './button';
 import { Bot, Sparkles, Brain, Rocket, Users } from 'lucide-react';
+import eliaImage from '../../elia.jpg';
+import lisImage from '../../lis.jpg';
 
 // Bubble Component
 const Bubble = ({ index }: { index: number }) => {
@@ -89,14 +91,16 @@ const TeamSection = () => {
       role: "Projektleitung",
       description: "Analysiert Ihre Unternehmensprozesse, um die passenden Lösungen zu identifizieren. Elia stellt sicher, dass unsere Technologie exakt auf Ihre strategischen Ziele einzahlt.",
       icon: Users,
-      color: "from-blue-400 to-blue-600"
+      color: "from-blue-400 to-blue-600",
+      image: eliaImage
     },
     {
       name: "Lis",
       role: "Automation Engineer",
       description: "Verantwortlich für die technische Architektur und System-Integration. Lis übersetzt Ihre geschäftlichen Anforderungen in effizienten, fehlerfreien Code und automatisierte Workflows.",
       icon: Sparkles,
-      color: "from-blue-500 to-indigo-500"
+      color: "from-blue-500 to-indigo-500",
+      image: lisImage
     }
   ];
 
@@ -143,10 +147,14 @@ const TeamSection = () => {
             >
               <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-200 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] h-full flex flex-col overflow-hidden border border-white/50">
 
-                {/* Profile Picture Placeholder */}
+                {/* Profile Picture */}
                 <div className="p-8 text-center bg-gradient-to-br from-white to-blue-50/50">
                   <div className="w-32 h-32 mx-auto rounded-full bg-gray-200 border-4 border-white shadow-lg mb-5 flex items-center justify-center overflow-hidden">
-                    <div className="text-gray-400 text-xs">Photo</div>
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
 
                   <h3 className="text-3xl font-bold text-gray-900 mb-3">{member.name}</h3>
