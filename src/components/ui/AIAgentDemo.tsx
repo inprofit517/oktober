@@ -92,8 +92,8 @@ const AIAgentDemo: React.FC = () => {
 
   return (
     <section id="demo" className="relative w-full py-20 bg-gradient-to-b from-blue-800 via-blue-900 to-blue-950 overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* Background elements - Hidden on mobile */}
+      <div className="hidden md:block absolute inset-0 overflow-hidden">
         {/* Animated gradient orbs */}
         <motion.div
           animate={{
@@ -108,7 +108,7 @@ const AIAgentDemo: React.FC = () => {
           }}
           className="absolute -top-20 -left-20 w-96 h-96 bg-gradient-to-br from-blue-400/30 via-cyan-400/20 to-transparent rounded-full blur-3xl"
         />
-        
+
         <motion.div
           animate={{
             x: [0, -80, 0],

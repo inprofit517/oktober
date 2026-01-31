@@ -52,22 +52,22 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_80%,rgba(255,255,255,0.7),transparent_35%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_40%,rgba(255,255,255,0.9),transparent_30%)]"></div>
 
-        {/* Floating orbs */}
-        <div className="absolute top-20 left-10 w-24 h-24 bg-gradient-to-br from-white/80 to-gray-100/60 rounded-full blur-2xl animate-pulse shadow-2xl"></div>
-        <div className="absolute bottom-20 right-10 w-36 h-36 bg-gradient-to-br from-white/90 to-gray-50/70 rounded-full blur-3xl animate-pulse delay-1000 shadow-2xl"></div>
-        <div className="absolute top-1/3 right-1/4 w-20 h-20 bg-gradient-to-br from-white/85 to-gray-100/50 rounded-full blur-2xl animate-pulse delay-500 shadow-xl"></div>
-        <div className="absolute top-1/2 left-1/5 w-28 h-28 bg-gradient-to-br from-white/75 to-gray-50/60 rounded-full blur-2xl animate-pulse delay-700 shadow-2xl"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-32 h-32 bg-gradient-to-br from-white/80 to-gray-100/40 rounded-full blur-3xl animate-pulse delay-300 shadow-xl"></div>
-        <div className="absolute top-1/4 left-1/3 w-18 h-18 bg-gradient-to-br from-white/90 to-gray-50/80 rounded-full blur-xl animate-pulse delay-1200 shadow-lg"></div>
+        {/* Floating orbs - Hidden on mobile */}
+        <div className="hidden lg:block absolute top-20 left-10 w-24 h-24 bg-gradient-to-br from-white/80 to-gray-100/60 rounded-full blur-2xl animate-pulse shadow-2xl"></div>
+        <div className="hidden lg:block absolute bottom-20 right-10 w-36 h-36 bg-gradient-to-br from-white/90 to-gray-50/70 rounded-full blur-3xl animate-pulse delay-1000 shadow-2xl"></div>
+        <div className="hidden lg:block absolute top-1/3 right-1/4 w-20 h-20 bg-gradient-to-br from-white/85 to-gray-100/50 rounded-full blur-2xl animate-pulse delay-500 shadow-xl"></div>
+        <div className="hidden lg:block absolute top-1/2 left-1/5 w-28 h-28 bg-gradient-to-br from-white/75 to-gray-50/60 rounded-full blur-2xl animate-pulse delay-700 shadow-2xl"></div>
+        <div className="hidden lg:block absolute bottom-1/3 right-1/3 w-32 h-32 bg-gradient-to-br from-white/80 to-gray-100/40 rounded-full blur-3xl animate-pulse delay-300 shadow-xl"></div>
+        <div className="hidden lg:block absolute top-1/4 left-1/3 w-18 h-18 bg-gradient-to-br from-white/90 to-gray-50/80 rounded-full blur-xl animate-pulse delay-1200 shadow-lg"></div>
 
-        {/* Floating dots */}
-        <div className="absolute top-24 right-16 w-4 h-4 bg-white rounded-full opacity-80 animate-ping shadow-lg"></div>
-        <div className="absolute top-40 left-32 w-3 h-3 bg-gray-100 rounded-full opacity-70 animate-ping delay-1000 shadow-md"></div>
-        <div className="absolute bottom-32 left-24 w-5 h-5 bg-white rounded-full opacity-85 animate-ping delay-500 shadow-lg"></div>
-        <div className="absolute bottom-40 right-32 w-3 h-3 bg-gray-50 rounded-full opacity-75 animate-ping delay-1500 shadow-md"></div>
-        <div className="absolute top-60 left-1/2 w-4 h-4 bg-white rounded-full opacity-80 animate-ping delay-800 shadow-lg"></div>
-        <div className="absolute top-32 left-1/4 w-2 h-2 bg-gray-100 rounded-full opacity-60 animate-ping delay-600 shadow-sm"></div>
-        <div className="absolute bottom-1/4 left-1/2 w-3 h-3 bg-white rounded-full opacity-75 animate-ping delay-1100 shadow-md"></div>
+        {/* Floating dots - Hidden on mobile */}
+        <div className="hidden lg:block absolute top-24 right-16 w-4 h-4 bg-white rounded-full opacity-80 animate-ping shadow-lg"></div>
+        <div className="hidden lg:block absolute top-40 left-32 w-3 h-3 bg-gray-100 rounded-full opacity-70 animate-ping delay-1000 shadow-md"></div>
+        <div className="hidden lg:block absolute bottom-32 left-24 w-5 h-5 bg-white rounded-full opacity-85 animate-ping delay-500 shadow-lg"></div>
+        <div className="hidden lg:block absolute bottom-40 right-32 w-3 h-3 bg-gray-50 rounded-full opacity-75 animate-ping delay-1500 shadow-md"></div>
+        <div className="hidden lg:block absolute top-60 left-1/2 w-4 h-4 bg-white rounded-full opacity-80 animate-ping delay-800 shadow-lg"></div>
+        <div className="hidden lg:block absolute top-32 left-1/4 w-2 h-2 bg-gray-100 rounded-full opacity-60 animate-ping delay-600 shadow-sm"></div>
+        <div className="hidden lg:block absolute bottom-1/4 left-1/2 w-3 h-3 bg-white rounded-full opacity-75 animate-ping delay-1100 shadow-md"></div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
@@ -171,6 +171,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                       <CpuArchitectureMobile
                         className="w-full h-full"
                         text="AI"
+                        animateLines={false}
+                        animateMarkers={false}
                       />
                     </div>
                   </div>

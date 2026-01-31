@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { useState } from 'react';
 import { HeroSection } from './components/sections/HeroSection';
-import { BenefitsSection } from './components/sections/BenefitsSection';
-import { SolutionsSection } from './components/sections/SolutionsSection';
-import AIAgentDemo from './components/ui/AIAgentDemo';
-import { ProcessSection } from './components/sections/ProcessSection';
-import TeamSection from './components/ui/TeamSectionNew';
-import { FooterSection } from './components/sections/FooterSection';
 import { ContactPage } from './components/sections/ContactPage';
+
+const BenefitsSection = lazy(() => import('./components/sections/BenefitsSection').then(m => ({ default: m.BenefitsSection })));
+const SolutionsSection = lazy(() => import('./components/sections/SolutionsSection').then(m => ({ default: m.SolutionsSection })));
+const AIAgentDemo = lazy(() => import('./components/ui/AIAgentDemo'));
+const ProcessSection = lazy(() => import('./components/sections/ProcessSection').then(m => ({ default: m.ProcessSection })));
+const TeamSection = lazy(() => import('./components/ui/TeamSectionNew'));
+const FooterSection = lazy(() => import('./components/sections/FooterSection').then(m => ({ default: m.FooterSection })));
 
 function App() {
   const [showContactForm, setShowContactForm] = useState(false);
@@ -15,10 +16,10 @@ function App() {
   React.useEffect(() => {
     const handleShowContact = () => setShowContactForm(true);
     const handleReturnHome = () => setShowContactForm(false);
-    
+
     window.addEventListener('showContactForm', handleShowContact);
     window.addEventListener('returnToHome', handleReturnHome);
-    
+
     return () => {
       window.removeEventListener('showContactForm', handleShowContact);
       window.removeEventListener('returnToHome', handleReturnHome);
@@ -32,12 +33,14 @@ function App() {
   return (
     <>
       <HeroSection onShowContact={() => setShowContactForm(true)} />
-      <BenefitsSection />
-      <SolutionsSection />
-      <AIAgentDemo />
-      <ProcessSection />
-      <TeamSection />
-      <FooterSection />
+      <Suspense fallback={<div className="min-h-screen" />}>
+        <BenefitsSection />
+        <SolutionsSection />
+        <AIAgentDemo />
+        <ProcessSection />
+        <TeamSection />
+        <FooterSection />
+      </Suspense>
     </>
   );
 }

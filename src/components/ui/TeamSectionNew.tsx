@@ -43,7 +43,17 @@ const Bubble = ({ index }: { index: number }) => {
 
 // Bubbles Container
 const SparklingBubbles = () => {
-  const bubbles = Array.from({ length: 400 }, (_, i) => i);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const bubbleCount = isMobile ? 50 : 400;
+  const bubbles = Array.from({ length: bubbleCount }, (_, i) => i);
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -114,10 +124,10 @@ const TeamSection = () => {
       {/* Sparkling Bubbles */}
       <SparklingBubbles />
       
-      {/* Background Gradients/Shapes */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse" style={{ animationDelay: '2s' }} />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse" style={{ animationDelay: '4s' }} />
+      {/* Background Gradients/Shapes - Hidden on mobile */}
+      <div className="hidden md:block absolute top-0 left-0 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse" />
+      <div className="hidden md:block absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse" style={{ animationDelay: '2s' }} />
+      <div className="hidden md:block absolute bottom-0 left-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse" style={{ animationDelay: '4s' }} />
 
       <div className="w-full px-4 md:px-8 lg:px-12 relative z-10">
         {/* Section Header */}
@@ -153,6 +163,7 @@ const TeamSection = () => {
                     <img
                       src={member.image}
                       alt={member.name}
+                      loading="lazy"
                       className="w-full h-full object-cover"
                     />
                   </div>

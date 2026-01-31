@@ -249,49 +249,49 @@ export const SolutionsSection: React.FC = () => {
       <div className="absolute inset-0 overflow-hidden">
         {/* Base gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-blue-50/30 to-gray-100"></div>
-        
-        {/* Geometric patterns */}
-        <div className="absolute inset-0" style={{
+
+        {/* Geometric patterns - Hidden on mobile */}
+        <div className="hidden md:block absolute inset-0" style={{
           backgroundImage: `
             linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
             linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px)
           `,
           backgroundSize: '80px 80px'
         }}></div>
-        
-        {/* Abstract shapes */}
-        <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-blue-100/40 to-blue-200/20 rounded-full blur-xl"></div>
-        <div className="absolute top-40 right-32 w-24 h-24 bg-gradient-to-br from-blue-200/30 to-blue-300/15 rounded-full blur-lg"></div>
-        <div className="absolute bottom-32 left-1/4 w-40 h-40 bg-gradient-to-br from-blue-50/50 to-blue-100/25 rounded-full blur-2xl"></div>
-        <div className="absolute bottom-20 right-20 w-28 h-28 bg-gradient-to-br from-blue-150/35 to-blue-200/20 rounded-full blur-xl"></div>
-        
-        {/* Flowing lines */}
-        <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-200/40 to-transparent"></div>
-        <div className="absolute top-2/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-300/30 to-transparent"></div>
-        <div className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-100/50 to-transparent"></div>
-        
-        {/* Vertical accent lines */}
-        <div className="absolute left-1/4 top-0 w-px h-full bg-gradient-to-b from-transparent via-blue-200/30 to-transparent"></div>
-        <div className="absolute right-1/3 top-0 w-px h-full bg-gradient-to-b from-transparent via-blue-150/40 to-transparent"></div>
-        
-        {/* Decorative dots */}
-        <div className="absolute top-32 left-1/3 w-2 h-2 bg-blue-300/60 rounded-full"></div>
-        <div className="absolute top-1/2 right-1/4 w-3 h-3 bg-blue-200/50 rounded-full"></div>
-        <div className="absolute bottom-40 left-1/5 w-2 h-2 bg-blue-400/40 rounded-full"></div>
-        <div className="absolute bottom-1/3 right-1/5 w-2 h-2 bg-blue-250/45 rounded-full"></div>
-        
-        {/* Subtle hexagonal elements */}
-        <div className="absolute top-1/5 right-1/6 w-12 h-12 border border-blue-200/30 transform rotate-12 opacity-60"
+
+        {/* Abstract shapes - Reduced on mobile */}
+        <div className="hidden md:block absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-blue-100/40 to-blue-200/20 rounded-full blur-xl"></div>
+        <div className="hidden md:block absolute top-40 right-32 w-24 h-24 bg-gradient-to-br from-blue-200/30 to-blue-300/15 rounded-full blur-lg"></div>
+        <div className="hidden md:block absolute bottom-32 left-1/4 w-40 h-40 bg-gradient-to-br from-blue-50/50 to-blue-100/25 rounded-full blur-2xl"></div>
+        <div className="hidden md:block absolute bottom-20 right-20 w-28 h-28 bg-gradient-to-br from-blue-150/35 to-blue-200/20 rounded-full blur-xl"></div>
+
+        {/* Flowing lines - Hidden on mobile */}
+        <div className="hidden md:block absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-200/40 to-transparent"></div>
+        <div className="hidden md:block absolute top-2/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-300/30 to-transparent"></div>
+        <div className="hidden md:block absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-100/50 to-transparent"></div>
+
+        {/* Vertical accent lines - Hidden on mobile */}
+        <div className="hidden md:block absolute left-1/4 top-0 w-px h-full bg-gradient-to-b from-transparent via-blue-200/30 to-transparent"></div>
+        <div className="hidden md:block absolute right-1/3 top-0 w-px h-full bg-gradient-to-b from-transparent via-blue-150/40 to-transparent"></div>
+
+        {/* Decorative dots - Hidden on mobile */}
+        <div className="hidden md:block absolute top-32 left-1/3 w-2 h-2 bg-blue-300/60 rounded-full"></div>
+        <div className="hidden md:block absolute top-1/2 right-1/4 w-3 h-3 bg-blue-200/50 rounded-full"></div>
+        <div className="hidden md:block absolute bottom-40 left-1/5 w-2 h-2 bg-blue-400/40 rounded-full"></div>
+        <div className="hidden md:block absolute bottom-1/3 right-1/5 w-2 h-2 bg-blue-250/45 rounded-full"></div>
+
+        {/* Subtle hexagonal elements - Hidden on mobile */}
+        <div className="hidden md:block absolute top-1/5 right-1/6 w-12 h-12 border border-blue-200/30 transform rotate-12 opacity-60"
              style={{clipPath: 'polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%)'}}>
         </div>
-        <div className="absolute bottom-1/5 left-1/8 w-8 h-8 border border-blue-300/40 transform -rotate-30 opacity-50"
+        <div className="hidden md:block absolute bottom-1/5 left-1/8 w-8 h-8 border border-blue-300/40 transform -rotate-30 opacity-50"
              style={{clipPath: 'polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%)'}}>
         </div>
-        
-        {/* Animated floating elements */}
-        <div className="absolute top-16 right-16 w-1 h-1 bg-blue-400/70 rounded-full animate-ping" style={{animationDuration: '3s'}}></div>
-        <div className="absolute top-2/3 left-16 w-1 h-1 bg-blue-300/60 rounded-full animate-ping delay-1000" style={{animationDuration: '4s'}}></div>
-        <div className="absolute bottom-24 right-1/3 w-1 h-1 bg-blue-500/50 rounded-full animate-ping delay-500" style={{animationDuration: '5s'}}></div>
+
+        {/* Animated floating elements - Hidden on mobile */}
+        <div className="hidden md:block absolute top-16 right-16 w-1 h-1 bg-blue-400/70 rounded-full animate-ping" style={{animationDuration: '3s'}}></div>
+        <div className="hidden md:block absolute top-2/3 left-16 w-1 h-1 bg-blue-300/60 rounded-full animate-ping delay-1000" style={{animationDuration: '4s'}}></div>
+        <div className="hidden md:block absolute bottom-24 right-1/3 w-1 h-1 bg-blue-500/50 rounded-full animate-ping delay-500" style={{animationDuration: '5s'}}></div>
       </div>
       
       <div className="relative max-w-7xl mx-auto">
@@ -436,9 +436,10 @@ export const SolutionsSection: React.FC = () => {
                   
                   <div className="lg:w-1/3 p-4 md:p-8 flex items-center justify-center">
                     <div className="w-full h-auto bg-gray-100 rounded-lg border-2 border-gray-200 flex items-center justify-center">
-                      <img 
+                      <img
                         src={solution.image}
                         alt={solution.title}
+                        loading="lazy"
                         className="w-full h-auto object-contain rounded-lg"
                         onLoad={() => console.log(`Image loaded successfully: ${solution.image}`)}
                         onError={() => console.error(`Image failed to load: ${solution.image}`)}
