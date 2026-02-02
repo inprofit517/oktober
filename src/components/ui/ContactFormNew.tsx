@@ -3,7 +3,6 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Bot, Zap, Cpu, Network, Calendar, Home } from "lucide-react";
-import Cal, { getCalApi } from "@calcom/embed-react";
 
 const StaticGradientBackground: React.FC = () => {
   return (
@@ -118,10 +117,50 @@ const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
 
-    (async function () {
-      const cal = await getCalApi({ namespace: "erstgesprach" });
-      cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
-    })();
+    // Load Cal.eu embed script
+    (function (C: any, A: string, L: string) {
+      let p = function (a: any, ar: any) { a.q.push(ar); };
+      let d = C.document;
+      C.Cal = C.Cal || function () {
+        let cal = C.Cal;
+        let ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {};
+          cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          const api = function () { p(api, arguments); };
+          const namespace = ar[1];
+          api.q = api.q || [];
+          if (typeof namespace === "string") {
+            cal.ns[namespace] = cal.ns[namespace] || api;
+            p(cal.ns[namespace], ar);
+            p(cal, ["initNamespace", namespace]);
+          } else p(cal, ar);
+          return;
+        }
+        p(cal, ar);
+      };
+    })(window, "https://app.cal.eu/embed/embed.js", "init");
+
+    // Initialize Cal.eu
+    (window as any).Cal("init", "erstgesprach", { origin: "https://app.cal.eu" });
+
+    // Setup inline embed
+    (window as any).Cal.ns.erstgesprach("inline", {
+      elementOrSelector: "#my-cal-inline-erstgesprach",
+      config: { layout: "month_view", useSlotsViewOnSmallScreen: "true", theme: "light" },
+      calLink: "automaticly/erstgesprach",
+    });
+
+    // UI settings
+    (window as any).Cal.ns.erstgesprach("ui", {
+      theme: "light",
+      hideEventTypeDetails: false,
+      layout: "month_view"
+    });
   }, []);
 
   const handleReturnHome = () => {
@@ -205,12 +244,10 @@ const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="relative flex justify-center mb-12 w-full"
             >
-              <div className="w-full max-w-6xl bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden">
-                <Cal
-                  namespace="erstgesprach"
-                  calLink="automaticly/erstgesprach"
+              <div className="w-full max-w-6xl bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden" style={{ minHeight: "600px" }}>
+                <div
+                  id="my-cal-inline-erstgesprach"
                   style={{ width: "100%", height: "100%", overflow: "scroll" }}
-                  config={{ layout: "month_view", useSlotsViewOnSmallScreen: "true" }}
                 />
               </div>
             </motion.div>
