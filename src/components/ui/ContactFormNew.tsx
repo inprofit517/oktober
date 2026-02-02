@@ -121,7 +121,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
       (window as any).Cal.ns.erstgesprach("inline", {
         elementOrSelector:"#my-cal-inline-erstgesprach",
         config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light","locale":"de"},
-        calLink: "aitomaticly/erstgesprach",
+        calLink: "automaticly/erstgesprach",
       });
 
       (window as any).Cal.ns.erstgesprach("ui", {"theme":"light","hideEventTypeDetails":false,"layout":"month_view","locale":"de"});
@@ -212,7 +212,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
               <div className="w-full max-w-6xl bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden">
                 <div
                   id="my-cal-inline-erstgesprach"
-                  className="w-full"
+                  className="w-full h-full"
+                  style={{ height: "100%", overflow: "scroll" }}
                 />
               </div>
             </motion.div>
