@@ -52,7 +52,7 @@ export const FooterSection: React.FC = () => {
           <div className="max-w-xl">
             <h3 className="text-3xl font-bold mb-4">
               <span className="bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent">
-                AITOMATICLY
+                AUTOMATICLY
               </span>
             </h3>
             <p className="text-gray-300 text-sm leading-relaxed">
@@ -64,7 +64,7 @@ export const FooterSection: React.FC = () => {
           <div className="space-y-3 md:text-right">
             <div className="flex items-center gap-3 text-gray-300">
               <Mail className="w-4 h-4 text-blue-400 flex-shrink-0" />
-              <span className="text-sm">info@aitomaticly.com</span>
+              <span className="text-sm">info@automaticly.ch</span>
             </div>
             <div className="flex items-center gap-3 text-gray-300">
               <MapPin className="w-4 h-4 text-blue-400 flex-shrink-0" />
@@ -79,7 +79,7 @@ export const FooterSection: React.FC = () => {
         }`}>
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-gray-400 text-sm">
-              © 2026 AITOMATICLY. Alle Rechte vorbehalten.
+              © 2026 AUTOMATICLY. Alle Rechte vorbehalten.
             </div>
             <div className="flex gap-6 text-sm">
               <button className="text-gray-400 hover:text-blue-400 transition-colors duration-200">

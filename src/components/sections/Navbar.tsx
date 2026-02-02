@@ -56,7 +56,7 @@ export const Navbar: React.FC = () => {
             <div className="flex items-center justify-between">
               <div className="text-2xl font-bold">
                 <span className="bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent">
-                  AITOMATICLY
+                  AUTOMATICLY
                 </span>
               </div>
 
