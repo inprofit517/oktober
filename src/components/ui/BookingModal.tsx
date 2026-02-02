@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { X } from "lucide-react";
 
 declare global {
@@ -9,67 +9,75 @@ declare global {
 
 export default function BookingModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [isBookingFormView, setIsBookingFormView] = useState(false);
+  const initRef = useRef(false);
 
   useEffect(() => {
-    if (!isOpen) return;
+    if (!isOpen || initRef.current) return;
+    initRef.current = true;
 
-    const script = document.createElement("script");
-    script.src = "https://app.cal.eu/embed/embed.js";
-    script.async = true;
-
-    script.onload = () => {
-      const Cal = window.Cal;
-      if (!Cal) return;
-
-      Cal("init", "erstgesprach", { origin: "https://app.cal.eu" });
-
-      Cal.ns.erstgesprach("inline", {
-        elementOrSelector: "#my-cal-inline-erstgesprach",
-        config: { layout: "month_view", useSlotsViewOnSmallScreen: "true" },
-        calLink: "automaticly/erstgesprach",
-      });
-
-      Cal.ns.erstgesprach("ui", { hideEventTypeDetails: false, layout: "month_view" });
-
-      Cal.ns.erstgesprach("on", {
-        action: "__routeChanged",
-        callback: (e: any) => {
-          if (e?.detail?.data?.url) {
-            const url = e.detail.data.url;
-            const isFormView = url.includes("?") || url.includes("/book");
-            setIsBookingFormView(isFormView);
-          }
+    (function (C: any, A: string, L: string) {
+      let p = function (a: any, ar: any) { a.q.push(ar); };
+      let d = C.document;
+      C.Cal = C.Cal || function () {
+        let cal = C.Cal;
+        let ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {};
+          cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
         }
-      });
-
-      Cal.ns.erstgesprach("on", {
-        action: "__slotSelected",
-        callback: () => {
-          setIsBookingFormView(true);
+        if (ar[0] === L) {
+          const api: any = function () { p(api, arguments); };
+          const namespace = ar[1];
+          api.q = api.q || [];
+          if (typeof namespace === "string") {
+            cal.ns[namespace] = cal.ns[namespace] || api;
+            p(cal.ns[namespace], ar);
+            p(cal, ["initNamespace", namespace]);
+          } else p(cal, ar);
+          return;
         }
-      });
+        p(cal, ar);
+      };
+    })(window, "https://app.cal.eu/embed/embed.js", "init");
 
-      Cal.ns.erstgesprach("on", {
-        action: "__stepChanged",
-        callback: (e: any) => {
-          if (e?.detail?.data?.step === "date") {
-            setIsBookingFormView(false);
-          }
+    window.Cal("init", "erstgesprach", { origin: "https://app.cal.eu" });
+
+    window.Cal.ns.erstgesprach("inline", {
+      elementOrSelector: "#my-cal-inline-erstgesprach",
+      config: { layout: "month_view", useSlotsViewOnSmallScreen: "true" },
+      calLink: "automaticly/erstgesprach",
+    });
+
+    window.Cal.ns.erstgesprach("ui", { hideEventTypeDetails: false, layout: "month_view" });
+
+    window.Cal.ns.erstgesprach("on", {
+      action: "__routeChanged",
+      callback: (e: any) => {
+        if (e?.detail?.data?.url) {
+          const url = e.detail.data.url;
+          const isFormView = url.includes("?") || url.includes("/book");
+          setIsBookingFormView(isFormView);
         }
-      });
-    };
-
-    if (!document.querySelector('script[src="https://app.cal.eu/embed/embed.js"]')) {
-      document.head.appendChild(script);
-    } else {
-      script.onload(null as any);
-    }
-
-    return () => {
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
       }
-    };
+    });
+
+    window.Cal.ns.erstgesprach("on", {
+      action: "__slotSelected",
+      callback: () => {
+        setIsBookingFormView(true);
+      }
+    });
+
+    window.Cal.ns.erstgesprach("on", {
+      action: "__stepChanged",
+      callback: (e: any) => {
+        if (e?.detail?.data?.step === "date") {
+          setIsBookingFormView(false);
+        }
+      }
+    });
   }, [isOpen]);
 
   if (!isOpen) return null;
