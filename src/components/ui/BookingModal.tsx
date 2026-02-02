@@ -1,56 +1,14 @@
-import { useEffect, useRef } from "react";
+import Cal, { getCalApi } from "@calcom/embed-react";
+import { useEffect } from "react";
 import { X } from "lucide-react";
 
-declare global {
-  interface Window {
-    Cal: any;
-  }
-}
-
 export default function BookingModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
-  const initRef = useRef(false);
-
   useEffect(() => {
-    if (!isOpen || initRef.current) return;
-    initRef.current = true;
-
-    (function (C: any, A: string, L: string) {
-      let p = function (a: any, ar: any) { a.q.push(ar); };
-      let d = C.document;
-      C.Cal = C.Cal || function () {
-        let cal = C.Cal;
-        let ar = arguments;
-        if (!cal.loaded) {
-          cal.ns = {};
-          cal.q = cal.q || [];
-          d.head.appendChild(d.createElement("script")).src = A;
-          cal.loaded = true;
-        }
-        if (ar[0] === L) {
-          const api: any = function () { p(api, arguments); };
-          const namespace = ar[1];
-          api.q = api.q || [];
-          if (typeof namespace === "string") {
-            cal.ns[namespace] = cal.ns[namespace] || api;
-            p(cal.ns[namespace], ar);
-            p(cal, ["initNamespace", namespace]);
-          } else p(cal, ar);
-          return;
-        }
-        p(cal, ar);
-      };
-    })(window, "https://app.cal.eu/embed/embed.js", "init");
-
-    window.Cal("init", "erstgesprach", { origin: "https://app.cal.eu" });
-
-    window.Cal.ns.erstgesprach("inline", {
-      elementOrSelector: "#my-cal-inline-erstgesprach",
-      config: { layout: "month_view", useSlotsViewOnSmallScreen: "true" },
-      calLink: "automaticly/erstgesprach",
-    });
-
-    window.Cal.ns.erstgesprach("ui", { hideEventTypeDetails: false, layout: "month_view" });
-  }, [isOpen]);
+    (async function () {
+      const cal = await getCalApi({ namespace: "erstgesprach" });
+      cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
+    })();
+  }, []);
 
   if (!isOpen) return null;
 
@@ -64,7 +22,12 @@ export default function BookingModal({ isOpen, onClose }: { isOpen: boolean; onC
           <X size={20} />
         </button>
 
-        <div style={{ width: "100%", height: "100%", overflow: "scroll" }} id="my-cal-inline-erstgesprach"></div>
+        <Cal
+          namespace="erstgesprach"
+          calLink="automaticly/erstgesprach"
+          style={{ width: "100%", height: "100%", overflow: "scroll" }}
+          config={{ layout: "month_view", useSlotsViewOnSmallScreen: "true" }}
+        />
       </div>
     </div>
   );
