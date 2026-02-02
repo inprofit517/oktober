@@ -3,6 +3,7 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Bot, Zap, Cpu, Network, Calendar, Home } from "lucide-react";
+import Cal, { getCalApi } from "@calcom/embed-react";
 
 const StaticGradientBackground: React.FC = () => {
   return (
@@ -117,15 +118,10 @@ const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
 
-    if (typeof window !== 'undefined' && (window as any).Cal) {
-      (window as any).Cal.ns.erstgesprach("inline", {
-        elementOrSelector:"#my-cal-inline-erstgesprach",
-        config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light","locale":"de"},
-        calLink: "automaticly/erstgesprach",
-      });
-
-      (window as any).Cal.ns.erstgesprach("ui", {"theme":"light","hideEventTypeDetails":false,"layout":"month_view","locale":"de"});
-    }
+    (async function () {
+      const cal = await getCalApi({ namespace: "erstgesprach" });
+      cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
+    })();
   }, []);
 
   const handleReturnHome = () => {
@@ -210,10 +206,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ onReturnHome }) => {
               className="relative flex justify-center mb-12 w-full"
             >
               <div className="w-full max-w-6xl bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden">
-                <div
-                  id="my-cal-inline-erstgesprach"
-                  className="w-full h-full"
-                  style={{ height: "100%", overflow: "scroll" }}
+                <Cal
+                  namespace="erstgesprach"
+                  calLink="automaticly/erstgesprach"
+                  style={{ width: "100%", height: "100%", overflow: "scroll" }}
+                  config={{ layout: "month_view", useSlotsViewOnSmallScreen: "true" }}
                 />
               </div>
             </motion.div>
