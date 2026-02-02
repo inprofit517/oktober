@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { X } from "lucide-react";
 
 declare global {
@@ -8,7 +8,6 @@ declare global {
 }
 
 export default function BookingModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
-  const [isBookingFormView, setIsBookingFormView] = useState(false);
   const initRef = useRef(false);
 
   useEffect(() => {
@@ -51,44 +50,13 @@ export default function BookingModal({ isOpen, onClose }: { isOpen: boolean; onC
     });
 
     window.Cal.ns.erstgesprach("ui", { hideEventTypeDetails: false, layout: "month_view" });
-
-    window.Cal.ns.erstgesprach("on", {
-      action: "__routeChanged",
-      callback: (e: any) => {
-        if (e?.detail?.data?.url) {
-          const url = e.detail.data.url;
-          const isFormView = url.includes("?") || url.includes("/book");
-          setIsBookingFormView(isFormView);
-        }
-      }
-    });
-
-    window.Cal.ns.erstgesprach("on", {
-      action: "__slotSelected",
-      callback: () => {
-        setIsBookingFormView(true);
-      }
-    });
-
-    window.Cal.ns.erstgesprach("on", {
-      action: "__stepChanged",
-      callback: (e: any) => {
-        if (e?.detail?.data?.step === "date") {
-          setIsBookingFormView(false);
-        }
-      }
-    });
   }, [isOpen]);
 
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-2 sm:p-4 backdrop-blur-sm">
-      <div
-        className={`relative h-[85vh] w-full rounded-2xl bg-white shadow-2xl overflow-hidden transition-all duration-300 ease-in-out ${
-          isBookingFormView ? "max-w-3xl" : "max-w-5xl"
-        }`}
-      >
+      <div className="relative h-[85vh] w-full max-w-5xl rounded-2xl bg-white shadow-2xl overflow-hidden">
         <button
           onClick={onClose}
           className="absolute right-5 top-5 z-20 p-2 bg-white/80 rounded-full text-gray-600 hover:text-black hover:bg-white transition-all shadow-lg"
