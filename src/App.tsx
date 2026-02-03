@@ -2,7 +2,6 @@ import React, { lazy, Suspense } from 'react';
 import { useState } from 'react';
 import { HeroSection } from './components/sections/HeroSection';
 import { ContactPage } from './components/sections/ContactPage';
-import { VoiceflowChatButton } from './components/ui/VoiceflowChatButton';
 
 const BenefitsSection = lazy(() => import('./components/sections/BenefitsSection').then(m => ({ default: m.BenefitsSection })));
 const SolutionsSection = lazy(() => import('./components/sections/SolutionsSection').then(m => ({ default: m.SolutionsSection })));
@@ -42,7 +41,6 @@ function App() {
         <TeamSection />
         <FooterSection />
       </Suspense>
-      <VoiceflowChatButton variant="desktop" className="hidden lg:block" />
     </>
   );
 }

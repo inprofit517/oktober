@@ -22,10 +22,13 @@
           window.voiceflow.chat.load({
             verify: { projectID: '6981d9c1e88e170404c7a44a' },
             url: 'https://general-runtime.voiceflow.com',
-            versionID: 'production'
+            versionID: 'production',
+            voice: {
+              url: "https://runtime-api.voiceflow.com"
+            }
           });
         }
-        v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
       })(document, 'script');
     </script>
     <style>
