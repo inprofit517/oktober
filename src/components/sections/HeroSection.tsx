@@ -218,6 +218,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 <VoiceflowChatButton variant="mobile" />
               </div>
             </div>
+
+            {/* Chat Button for Desktop - Bottom Right */}
+            <div className="hidden lg:block">
+              <VoiceflowChatButton variant="hero-desktop" />
+            </div>
           </div>
         </div>
       </div>

@@ -14,7 +14,7 @@ declare global {
 }
 
 interface VoiceflowChatButtonProps {
-  variant?: 'desktop' | 'mobile';
+  variant?: 'desktop' | 'mobile' | 'hero-desktop';
   className?: string;
 }
 
@@ -44,6 +44,26 @@ export const VoiceflowChatButton: React.FC<VoiceflowChatButtonProps> = ({
   };
 
   if (!isLoaded) return null;
+
+  if (variant === 'hero-desktop') {
+    return (
+      <button
+        onClick={handleClick}
+        className={`absolute bottom-8 right-8 z-20 group ${
+          isAnimating ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
+        } transition-all duration-500 ease-out ${className}`}
+        aria-label="Chat mit uns"
+      >
+        <div className="relative">
+          <div className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 flex items-center justify-center shadow-lg hover:shadow-2xl transform hover:scale-110 transition-all duration-300">
+            <MessageCircle className="w-8 h-8 text-white" />
+          </div>
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 animate-ping opacity-20"></div>
+          <div className="absolute -top-1 -right-1 w-5 h-5 bg-green-500 border-2 border-white rounded-full animate-pulse"></div>
+        </div>
+      </button>
+    );
+  }
 
   if (variant === 'desktop') {
     return (
