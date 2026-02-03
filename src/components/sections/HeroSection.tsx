@@ -5,7 +5,6 @@ import { AnimatedCounter } from '../ui/AnimatedCounter';
 import { Navbar } from './Navbar';
 import CpuArchitecture from '../ui/CpuArchitecture';
 import CpuArchitectureMobile from '../ui/CpuArchitectureMobile';
-import { VoiceflowChatButton } from '../ui/VoiceflowChatButton';
 
 interface HeroSectionProps {
   title?: string;
@@ -204,7 +203,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 </Button>
               </div>
 
-              <div className="grid grid-cols-3 gap-4 px-4 lg:hidden">
+              <div className="grid grid-cols-2 gap-8 px-4 lg:hidden">
                 <div className="text-center">
                   <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent">
                     <AnimatedCounter end={80} suffix="%" className="bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent" />
@@ -215,13 +214,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent">24/7</div>
                   <div className="text-sm text-muted-foreground">Immer verfügbar</div>
                 </div>
-                <VoiceflowChatButton variant="mobile" />
               </div>
-            </div>
-
-            {/* Chat Button for Desktop - Bottom Right */}
-            <div className="hidden lg:block">
-              <VoiceflowChatButton variant="hero-desktop" />
             </div>
           </div>
         </div>
