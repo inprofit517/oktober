@@ -3,6 +3,18 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, Mail, Bot, ArrowRight } from "lucide-react";
 
+declare global {
+  interface Window {
+    voiceflow?: {
+      chat: {
+        open: () => void;
+        close: () => void;
+        load: (config: any) => void;
+      };
+    };
+  }
+}
+
 interface AIAgent {
   id: string;
   name: string;
@@ -81,8 +93,9 @@ const AIAgentDemo: React.FC = () => {
   }, []);
 
   const handleDemoClick = (demoUrl: string) => {
-    // Trigger contact form
-    window.dispatchEvent(new CustomEvent('showContactForm'));
+    if (window.voiceflow?.chat) {
+      window.voiceflow.chat.open();
+    }
   };
 
   const scrollToDemo = () => {
