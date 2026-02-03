@@ -92,8 +92,8 @@ const AIAgentDemo: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleDemoClick = (demoUrl: string) => {
-    if (window.voiceflow?.chat) {
+  const handleDemoClick = (agentId: string) => {
+    if (agentId === "support" && window.voiceflow?.chat) {
       window.voiceflow.chat.open();
     }
   };
@@ -259,7 +259,7 @@ const AIAgentDemo: React.FC = () => {
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      onClick={() => handleDemoClick(agent.demoUrl)}
+                      onClick={() => handleDemoClick(agent.id)}
                       className={`w-full bg-gradient-to-r ${agent.color} text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group/btn`}
                     >
                       Jetzt Ausprobieren
